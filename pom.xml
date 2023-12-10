@@ -16,6 +16,16 @@
 
     <dependencies>
         <dependency>
+            <groupId> mysql</groupId>
+            <artifactId> mysql-connector-java </artifactId>
+            <version> 8.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId> org.hibernate </groupId>
+            <artifactId> hibernate-core </artifactId>
+            <version> 5.6.14.Final </version>
+        </dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21-ea+24</version>
@@ -61,7 +71,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.aerolineascanary7islands/com.example.aerolineascanary7islands.HelloApplication
+                                com.example.aerolineascanary7islands/com.example.aerolineascanary7islands.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
