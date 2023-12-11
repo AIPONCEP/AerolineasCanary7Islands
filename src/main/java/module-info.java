@@ -1,6 +1,7 @@
 module com.example.aerolineascanary7islands {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.persistence;
 
 
     opens com.example.aerolineascanary7islands to javafx.fxml;

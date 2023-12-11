@@ -1,15 +1,18 @@
 package com.example.aerolineascanary7islands.controllers;
 
+import com.example.aerolineascanary7islands.models.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
+import static com.example.aerolineascanary7islands.models.RegisterModel.insertUsuario;
 
 public class RegisterController {
     @FXML
     private Label registerTitle;
     public void initialize(){
-
+        Usuario usuario = new Usuario("nm", "dd","dd","dd");
+        insertUsuario(usuario);
     }
 
     public void exitClick(){
@@ -18,6 +21,7 @@ public class RegisterController {
     }
 
     public void send(){
+
         cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml","login", registerTitle);
 
     }
