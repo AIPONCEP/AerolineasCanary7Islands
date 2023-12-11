@@ -19,17 +19,17 @@
          </image>
       </ImageView>
       <Pane layoutX="33.0" layoutY="245.0" opacity="0.25" prefHeight="86.0" prefWidth="797.0" style="-fx-background-color: WHITE; -fx-border-color: GREY;" />
-      <Label layoutX="56.0" layoutY="254.0" text="AEROLINES CANARY 7 ISLANDS">
+      <Label layoutX="73.0" layoutY="244.0" text="AEROLINES CANARY 7 ISLANDS">
          <font>
-            <Font name="Monospaced Bold" size="48.0" />
+            <Font name="Impact" size="64.0" />
          </font>
          <effect>
             <Shadow />
          </effect>
       </Label>
-      <Label fx:id="mainTitle" layoutX="54.0" layoutY="253.0" text="AEROLINES CANARY 7 ISLANDS">
+      <Label fx:id="mainTitle" layoutX="71.0" layoutY="243.0" text="AEROLINES CANARY 7 ISLANDS">
          <font>
-            <Font name="Monospaced Bold" size="48.0" />
+            <Font name="Impact" size="64.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -58,9 +58,9 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="681.0" layoutY="17.0" text="Iniciar Sesión">
+      <Label layoutX="694.0" layoutY="22.0" prefHeight="41.0" prefWidth="137.0" text="Iniciar Sesión">
          <font>
-            <Font name="Monospaced Bold" size="20.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -82,18 +82,13 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.20623809099197388" blue="0.6100000143051147" />
+                        <Color red="1.0" green="1.0" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="41.0" fitWidth="79.0" layoutX="630.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Iconos/avion-de-papel.png" />
-         </image>
-      </ImageView>
-      <Pane layoutX="616.0" layoutY="6.0" onMouseClicked="#loginClick" prefHeight="41.0" prefWidth="246.0" />
+      <Pane layoutX="675.0" layoutY="22.0" onMouseClicked="#loginClick" prefHeight="41.0" prefWidth="163.0" />
    </children>
 </AnchorPane>
