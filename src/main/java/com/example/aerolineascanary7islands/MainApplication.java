@@ -1,5 +1,6 @@
 package com.example.aerolineascanary7islands;
 
+import com.example.aerolineascanary7islands.models.ManipulateBd;
 import com.example.aerolineascanary7islands.models.Usuario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,8 +24,8 @@ public class MainApplication extends Application {
 
     public static void main(String[] args) {
 
-        Usuario usuario = new Usuario("Nombre","Pass","Mail",100000000);
-        insertUsuario(usuario);
+        Usuario usuario = new Usuario("Nome","Pass","Mail",100000000);
+        ManipulateBd.insert(usuario);
 
 
     }
