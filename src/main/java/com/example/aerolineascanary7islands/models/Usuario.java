@@ -6,7 +6,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "usuarios")
 public class Usuario implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id")
@@ -17,9 +16,10 @@ public class Usuario implements Serializable {
     private String contraseña;
     @Column(name="Mail")
     private String mail;
-
     @Column(name="Tlf")
     private int tlf;
+    @OneToOne(mappedBy = "id_Admin")
+    private Administrador administrador;
 
     public Usuario() {
         this.id = 0;
