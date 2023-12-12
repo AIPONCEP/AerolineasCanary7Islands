@@ -5,6 +5,7 @@
              version="2.1">
 
     <persistence-unit name="Persistencia" transaction-type="RESOURCE_LOCAL">
+        <class>com.example.aerolineascanary7islands.models.Usuario</class>
 
         <!-- Configuración de la unidad de persistencia, como la conexión a la base de datos -->
         <properties>

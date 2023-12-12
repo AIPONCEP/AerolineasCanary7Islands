@@ -22,6 +22,7 @@ public class Usuario implements Serializable {
     private int tlf;
 
     public Usuario() {
+        this.id = 0;
         this.nombre = null;
         this.contraseña = null;
         this.mail = null;

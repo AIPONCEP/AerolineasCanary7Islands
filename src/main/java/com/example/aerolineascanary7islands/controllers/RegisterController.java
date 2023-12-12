@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
+import static com.example.aerolineascanary7islands.models.RegisterModel.getUsuario;
 import static com.example.aerolineascanary7islands.models.RegisterModel.insertUsuario;
 
 public class RegisterController {
@@ -12,7 +13,7 @@ public class RegisterController {
     private Label registerTitle;
     public void initialize(){
         Usuario usuario = new Usuario("Nombre","Pass","Mail",100000000);
-        insertUsuario(usuario);
+        getUsuario(usuario);
     }
 
     public void exitClick(){

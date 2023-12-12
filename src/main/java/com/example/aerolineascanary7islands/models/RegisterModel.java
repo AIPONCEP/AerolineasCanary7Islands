@@ -15,4 +15,13 @@ public class RegisterModel {
         manager.close();
     }
 
+    public static Usuario getUsuario(Usuario u){
+        EntityManager manager = managerFactory.createEntityManager();
+        manager.getTransaction().begin();
+        Usuario usuario = manager.find(Usuario.class, u.getId());
+        manager.getTransaction().commit();
+        manager.close();
+        return usuario;
+    }
+
 }
