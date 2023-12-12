@@ -9,29 +9,66 @@ public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private int cod;
-
-    @Column(name="nombre")
+    @Column(name="Id")
+    private int id;
+    @Column(name="Nombre")
     private String nombre;
-
-    @Column(name="contraseña")
+    @Column(name="Contraseña")
     private String contraseña;
-
-    @Column(name="mail")
+    @Column(name="Mail")
     private String mail;
 
-    @Column(name="tlf")
-    private String tlf;
+    @Column(name="Tlf")
+    private int tlf;
 
     public Usuario() {
+        this.nombre = null;
+        this.contraseña = null;
+        this.mail = null;
+        this.tlf = 0;
     }
-
-    public Usuario( String nombre, String contraseña, String mail, String tlf) {
+    public Usuario(String nombre, String contraseña, String mail, int tlf) {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.mail = mail;
         this.tlf = tlf;
     }
+    public int getId() {
+        return id;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getContraseña() {
+        return contraseña;
+    }
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+    public String getMail() {
+        return mail;
+    }
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+    public int getTlf() {
+        return tlf;
+    }
+    public void setTlf(int tlf) {
+        this.tlf = tlf;
+    }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", contraseña='" + contraseña + '\'' +
+                ", mail='" + mail + '\'' +
+                ", tlf=" + tlf +
+                '}';
+    }
 }

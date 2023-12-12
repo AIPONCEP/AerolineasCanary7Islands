@@ -3,7 +3,6 @@ module com.example.aerolineascanary7islands {
     requires javafx.fxml;
     requires java.persistence;
 
-
     opens com.example.aerolineascanary7islands to javafx.fxml;
     exports com.example.aerolineascanary7islands;
     exports com.example.aerolineascanary7islands.controllers;

@@ -11,7 +11,7 @@ public class RegisterController {
     @FXML
     private Label registerTitle;
     public void initialize(){
-        Usuario usuario = new Usuario("nm", "dd","dd","dd");
+        Usuario usuario = new Usuario("Nombre","Pass","Mail",100000000);
         insertUsuario(usuario);
     }
 

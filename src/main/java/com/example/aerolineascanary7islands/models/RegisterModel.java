@@ -12,9 +12,7 @@ public class RegisterModel {
         manager.getTransaction().begin();
         manager.persist(usuario);
         manager.getTransaction().commit();
-
         manager.close();
-
     }
 
 }
