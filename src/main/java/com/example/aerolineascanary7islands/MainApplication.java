@@ -23,7 +23,7 @@ public class MainApplication extends Application {
 
     public static void main(String[] args) {
 
-        Usuario usuario = new Usuario("Nombre","Pass","Mail",10000000);
+        Usuario usuario = new Usuario("Nombre","Pass","Mail",100000000);
         insertUsuario(usuario);
 
 
