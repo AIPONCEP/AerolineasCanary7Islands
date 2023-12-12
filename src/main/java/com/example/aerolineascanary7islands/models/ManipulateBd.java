@@ -24,6 +24,9 @@ public class ManipulateBd extends Application {
         manager.close();
     }
 
+
+
+
     @Override
     public void start(Stage primaryStage) {
 

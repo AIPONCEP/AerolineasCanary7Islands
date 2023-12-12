@@ -21,12 +21,12 @@
             <Font name="Berlin Sans FB Demi Bold" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="189.0" layoutY="147.0" text="Nombre">
+      <Label layoutX="189.0" layoutY="147.0" text="Email">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="269.0" layoutY="143.0" />
+      <TextField fx:id="textFieldEmail" layoutX="269.0" layoutY="143.0" />
       <Label layoutX="181.0" layoutY="211.0" text="Contraseña">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
@@ -37,6 +37,6 @@
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Button>
-      <PasswordField layoutX="269.0" layoutY="208.0" />
+      <PasswordField fx:id="textFieldContraseña" layoutX="269.0" layoutY="208.0" />
    </children>
 </AnchorPane>

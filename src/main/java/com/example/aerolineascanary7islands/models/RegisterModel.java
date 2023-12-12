@@ -3,25 +3,25 @@ package com.example.aerolineascanary7islands.models;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.ArrayList;
 
 public class RegisterModel {
     public static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("Persistencia");
 
-    public static void insertUsuario(Usuario usuario){
+    public static ArrayList<Usuario> findUsuario(String nombre, String contraseña){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
-        manager.persist(usuario);
+        ArrayList<Usuario> listado = (ArrayList<Usuario>) manager.createQuery("FROM Usuario WHERE nombre = :nombre and contraseña = :contraseña").setParameter("nombre", nombre).getResultList();
         manager.getTransaction().commit();
         manager.close();
+        return listado;
     }
 
-    public static Usuario getUsuario(Usuario u){
-        EntityManager manager = managerFactory.createEntityManager();
-        manager.getTransaction().begin();
-        Usuario usuario = manager.find(Usuario.class, u.getId());
-        manager.getTransaction().commit();
-        manager.close();
-        return usuario;
-    }
+    (Session session){
+        SQLQuery sqlQuery = session.createSQLQuery( "SELECT * FROM clientes WHERE nombre = :nombre" );
+        sqlQuery.setParameter( "nombre" , "PACO");
+        sqlQuery.addEntity(Client. class);
+        List<Client> resultado = sqlQuery.getResultList();
+
 
 }
