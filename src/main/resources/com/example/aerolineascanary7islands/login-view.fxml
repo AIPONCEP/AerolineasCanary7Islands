@@ -1,42 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.LoginController">
+<AnchorPane prefHeight="705.0" prefWidth="976.0" style="-fx-background-color: Black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.LoginController">
    <children>
-      <Pane layoutX="114.0" layoutY="28.0" opacity="0.47" prefHeight="345.0" prefWidth="375.0" style="-fx-background-color: grey;" />
-      <Button layoutX="271.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#send" text="Enviar">
+      <ImageView fitHeight="771.0" fitWidth="1021.0" layoutX="-3.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/terminalMaletas.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="151.0" layoutY="170.0" opacity="0.4" prefHeight="316.0" prefWidth="713.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label fx:id="loginTitle" layoutX="327.0" layoutY="45.0" text="Iniciar Sesión">
          <font>
-            <Font name="Berlin Sans FB" size="16.0" />
+            <Font name="Impact" size="64.0" />
          </font>
-      </Button>
-      <Label fx:id="loginTitle" layoutX="185.0" layoutY="53.0" text="Iniciar Sesion">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="40.0" />
-         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Label layoutX="189.0" layoutY="147.0" text="Email">
+      <Label layoutX="279.0" layoutY="261.0" text="Email" underline="true">
          <font>
-            <Font name="Berlin Sans FB" size="16.0" />
+            <Font name="Berlin Sans FB" size="24.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <TextField fx:id="textFieldEmail" layoutX="269.0" layoutY="143.0" />
-      <Label layoutX="181.0" layoutY="211.0" text="Contraseña">
+      <TextField fx:id="textFieldEmail" layoutX="475.0" layoutY="255.0" opacity="0.75" prefHeight="33.0" prefWidth="270.0" promptText="Introduzca su email">
          <font>
-            <Font name="Berlin Sans FB" size="16.0" />
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font></TextField>
+      <Label layoutX="279.0" layoutY="348.0" text="Contraseña" underline="true">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Button layoutX="256.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#registerClick" text="Registrarse">
+      <PasswordField fx:id="textFieldContraseña" layoutX="475.0" layoutY="342.0" opacity="0.75" prefHeight="33.0" prefWidth="270.0" promptText="Introduzca su contraseña">
          <font>
-            <Font name="Berlin Sans FB" size="16.0" />
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font></PasswordField>
+      <Pane layoutX="70.0" layoutY="672.0" opacity="0.25" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label layoutX="131.0" layoutY="681.0" text="Enviar">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
          </font>
-      </Button>
-      <PasswordField fx:id="textFieldContraseña" layoutX="269.0" layoutY="208.0" />
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutX="797.0" layoutY="672.0" opacity="0.25" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label layoutX="811.0" layoutY="681.0" text="Registrarse">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="76.0" layoutY="672.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+         <image>
+            <Image url="@../../../Iconos/flechaRoja.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="925.0" layoutY="672.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Iconos/flechaRoja.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="70.0" layoutY="672.0" onMouseClicked="#send" opacity="0.25" prefHeight="45.0" prefWidth="135.0" />
+      <Pane layoutX="797.0" layoutY="672.0" onMouseClicked="#registerClick" opacity="0.25" prefHeight="45.0" prefWidth="174.0" />
+      <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="705.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Iconos/avion.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="262.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Iconos/avion.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

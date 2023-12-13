@@ -58,8 +58,4 @@ public class Vuelos implements Serializable {
         this.plazas_Turista = plazas_Turista;
         this.plazas_Primera = plazas_Primera;
     }
-
-
-
-
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class RegisterModel {
     public static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("Persistencia");
 
-    public static ArrayList<Usuario> findUsuario(String nombre, String contraseña){
+    public static ArrayList<Usuario> findUsuario(String nombre, String contraseña) {
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
         ArrayList<Usuario> listado = (ArrayList<Usuario>) manager.createQuery("FROM Usuario WHERE nombre = :nombre and contraseña = :contraseña").setParameter("nombre", nombre).getResultList();
@@ -17,11 +17,11 @@ public class RegisterModel {
         return listado;
     }
 
-    (Session session){
-        SQLQuery sqlQuery = session.createSQLQuery( "SELECT * FROM clientes WHERE nombre = :nombre" );
-        sqlQuery.setParameter( "nombre" , "PACO");
-        sqlQuery.addEntity(Client. class);
-        List<Client> resultado = sqlQuery.getResultList();
-
-
+      /*(Session session) {
+            SQLQuery sqlQuery = session.createSQLQuery("SELECT * FROM clientes WHERE nombre = :nombre");
+            sqlQuery.setParameter("nombre", "PACO");
+            sqlQuery.addEntity(Client.class);
+            List<Client> resultado = sqlQuery.getResultList();
+        }
+    */
 }
