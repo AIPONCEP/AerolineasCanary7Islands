@@ -46,7 +46,7 @@
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldEmail" layoutX="422.0" layoutY="237.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su email" style="-fx-background-color: grey;">
+      <TextField fx:id="textFieldEmail" layoutX="422.0" layoutY="237.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su email" style="-fx-background-color: lightgrey; -fx-text-fill: black; -fx-border-color: grey;">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></TextField>
@@ -55,18 +55,18 @@
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Label>
-      <PasswordField fx:id="textFieldContraseña" layoutX="422.0" layoutY="369.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su contraseña" style="-fx-background-color: grey;">
+      <PasswordField fx:id="textFieldContraseña" layoutX="422.0" layoutY="369.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su contraseña" style="-fx-background-color: lightgrey; -fx-text-fill: black; -fx-border-color: grey;">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></PasswordField>
       <Pane layoutX="70.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="131.0" layoutY="681.0" text="Enviar">
+      <Label layoutX="129.0" layoutY="677.0" text="Enviar">
          <font>
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
       </Label>
       <Pane layoutX="797.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="811.0" layoutY="681.0" text="Registrarse">
+      <Label layoutX="804.0" layoutY="677.0" text="Registrarse">
          <font>
             <Font name="Berlin Sans FB" size="24.0" />
          </font>

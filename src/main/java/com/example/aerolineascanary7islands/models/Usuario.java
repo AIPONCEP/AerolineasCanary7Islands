@@ -18,7 +18,7 @@ public class Usuario implements Serializable {
     private String mail;
     @Column(name="Tlf")
     private int tlf;
-    @OneToOne(mappedBy = "id_Admin")
+    @OneToOne(mappedBy = "usuario")
     private Administrador administrador;
 
     public Usuario() {
@@ -34,6 +34,19 @@ public class Usuario implements Serializable {
         this.mail = mail;
         this.tlf = tlf;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
+    }
+
     public int getId() {
         return id;
     }

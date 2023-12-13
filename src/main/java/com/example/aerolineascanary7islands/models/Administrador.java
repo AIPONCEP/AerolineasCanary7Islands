@@ -12,9 +12,8 @@ public class Administrador implements Serializable {
     @Column(name="Sueldo")
     private float sueldo;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Id_Admin", referencedColumnName = "Id")
+    @JoinColumn(name = "Id_Admin")
     private Usuario usuario;
-
     public Administrador() {
         this.sueldo = 0.0F;
     }
@@ -25,10 +24,19 @@ public class Administrador implements Serializable {
     public int getId_Admin() {
         return id_Admin;
     }
+    public void setId_Admin(int id_Admin) {
+        this.id_Admin = id_Admin;
+    }
     public float getSueldo() {
         return sueldo;
     }
     public void setSueldo(float sueldo) {
         this.sueldo = sueldo;
+    }
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

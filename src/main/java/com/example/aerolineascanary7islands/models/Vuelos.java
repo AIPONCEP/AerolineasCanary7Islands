@@ -35,7 +35,6 @@ public class Vuelos implements Serializable {
     private int plazas_Turista;
     @Column(name = "Plazas_Primera")
     private int plazas_Primera;
-
     public Vuelos() {
         this.cod_Vuelo = "";
         this.precio = 0.0F;
