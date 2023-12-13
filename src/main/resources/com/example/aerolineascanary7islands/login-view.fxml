@@ -34,41 +34,41 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.1666666716337204" blue="1.0" />
+                        <Color green="0.16862745583057404" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="279.0" layoutY="243.0" text="EMAIL">
+      <Label layoutX="279.0" layoutY="243.0" text="Email">
          <font>
-            <Font name="Berlin Sans FB" size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Label>
       <TextField fx:id="textFieldEmail" layoutX="422.0" layoutY="237.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su email" style="-fx-background-color: lightgrey; -fx-text-fill: black; -fx-border-color: grey;">
          <font>
-            <Font name="Berlin Sans FB" size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font></TextField>
-      <Label layoutX="279.0" layoutY="375.0" text="CONTRASEÑA">
+      <Label layoutX="279.0" layoutY="375.0" text="Contraseña">
          <font>
-            <Font name="Berlin Sans FB" size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Label>
       <PasswordField fx:id="textFieldContraseña" layoutX="422.0" layoutY="369.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su contraseña" style="-fx-background-color: lightgrey; -fx-text-fill: black; -fx-border-color: grey;">
          <font>
-            <Font name="Berlin Sans FB" size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font></PasswordField>
       <Pane layoutX="70.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label layoutX="129.0" layoutY="677.0" text="Enviar">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Calibri" size="26.0" />
          </font>
       </Label>
       <Pane layoutX="797.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label layoutX="804.0" layoutY="677.0" text="Registrarse">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Calibri" size="26.0" />
          </font>
       </Label>
       <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="76.0" layoutY="672.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
