@@ -19,8 +19,8 @@
             <Image url="@../../../Imagenes/terminalMaletas.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="151.0" layoutY="170.0" opacity="0.4" prefHeight="316.0" prefWidth="713.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label fx:id="loginTitle" layoutX="327.0" layoutY="45.0" text="Iniciar Sesión">
+      <Pane layoutX="221.0" layoutY="177.0" opacity="0.6" prefHeight="313.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label fx:id="loginTitle" layoutX="330.0" layoutY="45.0" text="Iniciar Sesión">
          <font>
             <Font name="Impact" size="64.0" />
          </font>
@@ -34,106 +34,42 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color />
+                        <Color green="0.1666666716337204" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="279.0" layoutY="261.0" text="Email" underline="true">
+      <Label layoutX="279.0" layoutY="243.0" text="EMAIL">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Berlin Sans FB" size="18.0" />
          </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
       </Label>
-      <TextField fx:id="textFieldEmail" layoutX="475.0" layoutY="255.0" opacity="0.75" prefHeight="33.0" prefWidth="270.0" promptText="Introduzca su email">
+      <TextField fx:id="textFieldEmail" layoutX="422.0" layoutY="237.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su email" style="-fx-background-color: grey;">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></TextField>
-      <Label layoutX="279.0" layoutY="348.0" text="Contraseña" underline="true">
+      <Label layoutX="279.0" layoutY="375.0" text="CONTRASEÑA">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Berlin Sans FB" size="18.0" />
          </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
       </Label>
-      <PasswordField fx:id="textFieldContraseña" layoutX="475.0" layoutY="342.0" opacity="0.75" prefHeight="33.0" prefWidth="270.0" promptText="Introduzca su contraseña">
+      <PasswordField fx:id="textFieldContraseña" layoutX="422.0" layoutY="369.0" prefHeight="33.0" prefWidth="323.0" promptText="Introduzca su contraseña" style="-fx-background-color: grey;">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></PasswordField>
-      <Pane layoutX="70.0" layoutY="672.0" opacity="0.25" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Pane layoutX="70.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label layoutX="131.0" layoutY="681.0" text="Enviar">
          <font>
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
       </Label>
-      <Pane layoutX="797.0" layoutY="672.0" opacity="0.25" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Pane layoutX="797.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label layoutX="811.0" layoutY="681.0" text="Registrarse">
          <font>
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
       </Label>
       <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="76.0" layoutY="672.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
          <image>
@@ -147,12 +83,12 @@
       </ImageView>
       <Pane layoutX="70.0" layoutY="672.0" onMouseClicked="#send" opacity="0.25" prefHeight="45.0" prefWidth="135.0" />
       <Pane layoutX="797.0" layoutY="672.0" onMouseClicked="#registerClick" opacity="0.25" prefHeight="45.0" prefWidth="174.0" />
-      <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="705.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="708.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Iconos/avion.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="262.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="265.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Iconos/avion.png" />
          </image>

@@ -4,46 +4,53 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.RegisterController">
+<AnchorPane prefHeight="646.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.RegisterController">
    <children>
-      <Pane layoutX="70.0" layoutY="27.0" opacity="0.16" prefHeight="346.0" prefWidth="457.0" style="-fx-background-color: grey;" />
-      <Label fx:id="registerTitle" layoutX="201.0" layoutY="48.0" text="Registrarse">
+      <ImageView fitHeight="867.0" fitWidth="1076.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/EsperaEnTerminal.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="364.0" layoutY="263.0" opacity="0.25" prefHeight="217.0" prefWidth="340.0" style="-fx-background-color: black;" />
+      <Label fx:id="registerTitle" layoutX="437.0" layoutY="61.0" text="Registrarse">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="40.0" />
+            <Font name="Impact" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="195.0" layoutY="123.0" text="Nombre">
+      <Label layoutX="419.0" layoutY="297.0" text="Nombre">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font></Label>
-      <TextField fx:id="textFieldNombre" layoutX="281.0" layoutY="120.0" />
-      <Label layoutX="188.0" layoutY="162.0" text="Contraseña">
+      <TextField fx:id="textFieldNombre" layoutX="505.0" layoutY="294.0" />
+      <Label layoutX="412.0" layoutY="336.0" text="Contraseña">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font></Label>
-      <Label layoutX="194.0" layoutY="200.0" text="Telefono">
+      <Label layoutX="418.0" layoutY="374.0" text="Telefono">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font></Label>
-      <TextField fx:id="textFieldTelefono" layoutX="281.0" layoutY="197.0" />
-      <Label layoutX="208.0" layoutY="236.0" text="Mail">
+      <TextField fx:id="textFieldTelefono" layoutX="505.0" layoutY="371.0" />
+      <Label layoutX="432.0" layoutY="410.0" text="Mail">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font></Label>
-      <TextField fx:id="textFieldMail" layoutX="281.0" layoutY="233.0" />
-      <Button layoutX="277.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#send" text="Enviar">
+      <TextField fx:id="textFieldMail" layoutX="505.0" layoutY="407.0" />
+      <Button layoutX="639.0" layoutY="480.0" mnemonicParsing="false" onMouseClicked="#send" text="Enviar">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font></Button>
-      <Button layoutX="258.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#exitClick" text="Volver atras">
+      <Button layoutX="367.0" layoutY="480.0" mnemonicParsing="false" onMouseClicked="#exitClick" text="Volver atras">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Button>
-      <PasswordField fx:id="textFieldContraseña" layoutX="282.0" layoutY="159.0" />
+      <PasswordField fx:id="textFieldContraseña" layoutX="506.0" layoutY="333.0" />
    </children>
 </AnchorPane>
