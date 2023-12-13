@@ -20,7 +20,7 @@ public class LoginController {
     public void send(){
 
         if (findUsuario(textFieldEmail.getText(), textFieldContraseña.getText())){
-            cambiarScene("/com/example/aerolineascanary7islands/main-view.fxml","login", loginTitle);
+            cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml","login", loginTitle);
         }else {
             MethodsForControllers.showAlert("ERROR","No se encontro el usuario", Alert.AlertType.ERROR);
         }
