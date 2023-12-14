@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="434.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.PerfilController">
+   <children>
+      <Label fx:id="labelTitle" layoutX="111.0" layoutY="14.0" text="Informacion personal">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="385.0" onMouseClicked="#atras" text="Atras">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="200.0" layoutY="72.0" prefHeight="196.0" prefWidth="100.0" spacing="15.0">
+         <children>
+            <Label text="Nombre:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Contraseña:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Mail:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Telefono:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="293.0" layoutY="72.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+         <children>
+            <Label fx:id="labelNombre" prefHeight="26.0" prefWidth="66.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelContraseña" prefHeight="26.0" prefWidth="66.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelMail" prefHeight="26.0" prefWidth="66.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTelefono" prefHeight="26.0" prefWidth="66.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label layoutX="445.0" layoutY="385.0" onMouseClicked="#actualizar" text="Actualizar datos">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pane2" layoutX="130.0" layoutY="268.0" prefHeight="116.0" prefWidth="339.0" visible="false">
+         <children>
+            <ComboBox fx:id="comboBoxFields" layoutX="95.0" layoutY="2.0" prefWidth="150.0" />
+            <Label layoutX="46.0" layoutY="39.0" text="Nuevo dato:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldUpdate" layoutX="171.0" layoutY="40.0" />
+            <Label layoutX="123.0" layoutY="75.0" prefHeight="27.0" prefWidth="94.0" text="Confirmar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

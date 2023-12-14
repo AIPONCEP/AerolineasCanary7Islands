@@ -2,21 +2,20 @@ package com.example.aerolineascanary7islands.controllers;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 
-public class ticketsController {
+public class TicketsController {
     @FXML
     private StackPane carrousel;
+
+    @FXML
+    private Label labelTitle;
 
     @FXML
     private ImageView imageView1;
@@ -41,6 +40,10 @@ public class ticketsController {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
+    }
+
+    public void perfilClick(){
+        cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml","Informacion personal", labelTitle);
     }
 
     private void cambiarImagen() {
