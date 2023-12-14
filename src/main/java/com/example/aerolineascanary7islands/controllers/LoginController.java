@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
-import static com.example.aerolineascanary7islands.models.RegisterModel.*;
+import static com.example.aerolineascanary7islands.models.RegisterLoginModel.*;
 
 public class LoginController {
     @FXML

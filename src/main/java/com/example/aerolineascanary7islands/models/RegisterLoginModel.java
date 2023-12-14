@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class RegisterModel {
+public class RegisterLoginModel {
     public static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("Persistencia");
     public static Usuario findUsuario(String email, String contraseña) {
         try {

@@ -76,7 +76,7 @@ public class PerfilController {
     }
 
     public void confirmar(){
-        if (textFieldUpdate.getText() != null){
+        if (textFieldUpdate.getText() != ""){
             updateUser(atributoUsuario, comboBoxFields.getValue().toString(), textFieldUpdate.getText());
         }else {
                MethodsForControllers.showAlert("ERROR","El campo a actualizar esta vacio", Alert.AlertType.ERROR);
