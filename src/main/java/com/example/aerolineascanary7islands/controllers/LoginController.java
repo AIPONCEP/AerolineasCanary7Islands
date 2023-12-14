@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
+import static com.example.aerolineascanary7islands.models.RegisterModel.esAdministrador;
 import static com.example.aerolineascanary7islands.models.RegisterModel.findUsuario;
 
 public class LoginController {
@@ -18,13 +19,15 @@ public class LoginController {
     public void initialize(){
     }
     public void send(){
-
         if (findUsuario(textFieldEmail.getText(), textFieldContraseña.getText())){
-            cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml","login", loginTitle);
+            if(esAdministrador(1)){
+                cambiarScene("/com/example/aerolineascanary7islands/vuelos-view.fxml","Panel de Control de Vuelos",loginTitle);
+            }else {
+                cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml", "login", loginTitle);
+            }
         }else {
             MethodsForControllers.showAlert("ERROR","No se encontro el usuario", Alert.AlertType.ERROR);
         }
-
     }
     public void registerClick(){
         cambiarScene("/com/example/aerolineascanary7islands/register-view.fxml","register", loginTitle);

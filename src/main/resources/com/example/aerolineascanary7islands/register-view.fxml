@@ -29,7 +29,7 @@
             <Shadow />
          </effect>
       </Label>
-      <Label fx:id="labeltitle" layoutX="376.0" layoutY="60.0" text="Registrarse">
+      <Label fx:id="registerTitle" layoutX="376.0" layoutY="60.0" text="Registrarse">
          <font>
             <Font name="Impact" size="72.0" />
          </font>
