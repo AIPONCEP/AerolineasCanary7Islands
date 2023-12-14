@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="434.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.PerfilController">
    <children>
       <Label fx:id="labelTitle" layoutX="111.0" layoutY="14.0" text="Informacion personal">
@@ -77,13 +76,13 @@
       <Pane fx:id="pane2" layoutX="130.0" layoutY="268.0" prefHeight="116.0" prefWidth="339.0" visible="false">
          <children>
             <ComboBox fx:id="comboBoxFields" layoutX="95.0" layoutY="2.0" prefWidth="150.0" />
-            <Label layoutX="46.0" layoutY="39.0" text="Nuevo dato:">
+            <Label fx:id="labelNew" layoutX="46.0" layoutY="39.0" text="Nuevo dato:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <TextField fx:id="textFieldUpdate" layoutX="171.0" layoutY="40.0" />
-            <Label layoutX="123.0" layoutY="75.0" prefHeight="27.0" prefWidth="94.0" text="Confirmar">
+            <Label layoutX="123.0" layoutY="75.0" onMouseClicked="#confirmar" prefHeight="27.0" prefWidth="94.0" text="Confirmar">
                <font>
                   <Font size="18.0" />
                </font>

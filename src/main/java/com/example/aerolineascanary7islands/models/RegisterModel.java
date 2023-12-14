@@ -8,7 +8,7 @@ import java.util.List;
 
 public class RegisterModel {
     public static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("Persistencia");
-    public static boolean findUsuario(String email, String contraseña) {
+    public static Usuario findUsuario(String email, String contraseña) {
         try {
                 EntityManager manager = managerFactory.createEntityManager();
                 TypedQuery<Usuario> query = manager.createQuery("FROM Usuario WHERE mail = :mail AND contraseña = :contraseña", Usuario.class);
@@ -16,14 +16,15 @@ public class RegisterModel {
                 query.setParameter("contraseña", contraseña);
                 List<Usuario> resultList = query.getResultList();
                 if (resultList.get(0) != null){
-                    return true;
+                    return resultList.get(0);
                 }
                 manager.close();
         }catch (Exception e){
             e.printStackTrace();
         }
-        return false;
+     return null;
     }
+
     /**
      * esAdministrador comprueba que el usuario esté registrado en la tabla administradores
      * @param idUsuario se pasa el id que se supone se conoce previamente, ya que los administradores
