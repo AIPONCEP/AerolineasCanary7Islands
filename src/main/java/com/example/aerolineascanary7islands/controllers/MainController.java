@@ -1,5 +1,7 @@
 package com.example.aerolineascanary7islands.controllers;
 
+import com.example.aerolineascanary7islands.models.ManipulateBd;
+import com.example.aerolineascanary7islands.models.RegisterModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,7 +19,7 @@ public class MainController {
 
     }
     public void loginClick(){
-        cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml","login", mainTitle);
+        cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml", "login", mainTitle);
     }
 
 }
