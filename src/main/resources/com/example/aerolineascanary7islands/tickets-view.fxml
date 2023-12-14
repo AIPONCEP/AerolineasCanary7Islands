@@ -5,47 +5,66 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="422.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.TicketsController">
+<AnchorPane minHeight="700.0" minWidth="1070.0" prefHeight="700.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.TicketsController">
    <children>
-      <Label layoutX="252.0" layoutY="380.0" text="Reservar vuelo">
+      <Label layoutX="757.0" layoutY="624.0" text="Reservar vuelo">
          <font>
-            <Font size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <StackPane fx:id="carrousel" layoutY="58.0" prefHeight="305.0" prefWidth="576.0">
+      <StackPane fx:id="carrousel" layoutX="168.0" layoutY="168.0" prefHeight="371.0" prefWidth="730.0">
          <children>
-            <ImageView fx:id="imageView2" fitHeight="305.0" fitWidth="613.0">
+            <ImageView fx:id="imageView2" fitHeight="372.0" fitWidth="734.0">
                <image>
                   <Image url="@../../../Imagenes/Tenerife.jpg" />
                </image>
             </ImageView>
             <Label fx:id="tenerifeLabel" text="Tenerife" textFill="#191b14">
                <font>
-                  <Font size="65.0" />
+                  <Font name="Impact" size="64.0" />
                </font>
             </Label>
-            <ImageView fx:id="imageView1" fitHeight="304.0" fitWidth="619.0">
+            <Label fx:id="granCanariaLabel" text="Gran Canaria" textFill="#191b14">
+               <font>
+                  <Font name="Impact" size="64.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageView1" fitHeight="372.0" fitWidth="734.0">
                <image>
                   <Image url="@../../../Imagenes/GranCanaria.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="granCanariaLabel" text="Gran Canaria" textFill="#191b14">
-               <font>
-                  <Font size="65.0" />
-               </font>
-            </Label>
          </children></StackPane>
       <ImageView fitHeight="45.0" fitWidth="43.0" layoutX="14.0" layoutY="8.0" onMouseClicked="#perfilClick">
          <image>
             <Image url="@../../../Imagenes/usuario.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelTitle" layoutX="257.0" layoutY="-2.0" prefHeight="54.0" prefWidth="106.0" text="Viajes">
+      <Label fx:id="labelTitle" layoutX="449.0" layoutY="44.0" prefHeight="79.0" prefWidth="172.0" text="Viajes">
          <font>
-            <Font name="Calibri" size="40.0" />
+            <Font name="Impact" size="64.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.18095238506793976" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
    </children>
 </AnchorPane>

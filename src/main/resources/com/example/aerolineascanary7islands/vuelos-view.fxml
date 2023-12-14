@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -63,6 +65,16 @@
                 <Font name="Calibri" size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tablaVuelos" layoutX="46.0" layoutY="127.0" opacity="0.8" prefHeight="238.0" prefWidth="977.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-text-fill: grey;" />
+        <TableView fx:id="tablaVuelos" layoutX="45.0" layoutY="124.0" opacity="0.8" prefHeight="238.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-text-fill: grey;">
+         <columns>
+            <TableColumn prefWidth="108.0" resizable="false" text="Cod_Vuelo" />
+            <TableColumn prefWidth="111.0" resizable="false" text="Precio" />
+            <TableColumn minWidth="4.0" prefWidth="128.0" resizable="false" text="Fecha_Salida" />
+            <TableColumn prefWidth="133.0" resizable="false" text="Fecha_Llegada" />
+            <TableColumn minWidth="0.0" prefWidth="128.0" resizable="false" text="Destino" />
+            <TableColumn prefWidth="131.0" resizable="false" text="Procedencia" />
+            <TableColumn minWidth="9.0" prefWidth="129.0" resizable="false" text="Plazas_Turista" />
+            <TableColumn prefWidth="130.0" resizable="false" text="Plazas_Primera" />
+         </columns></TableView>
     </children>
 </AnchorPane>
