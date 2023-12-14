@@ -26,22 +26,30 @@ public class RegisterModel {
     }
     /**
      * esAdministrador comprueba que el usuario esté registrado en la tabla administradores
-     * @param id se pasa el id que se supone se conoce previamente,
-     * puesto que los administradores no se insertan desde la aplicación sino que se crean previamente en la base de datos.
+     * @param idUsuario se pasa el id que se supone se conoce previamente, ya que los administradores
+     * no se insertan desde la aplicación sino que se crean previamente en la base de datos.
      * nota: en nuestro caso el id siempre va a ser 1 para el admin.
+     * @param mail recogemos el mail introducido
      * @return true si encuentra resultados y false si no los encuentra.
      */
-    public static boolean esAdministrador(int id) {
+    public static boolean esAdministrador(int idUsuario, String mail) {
         try {
             EntityManager manager = managerFactory.createEntityManager();
-            TypedQuery<Administrador> query = manager.createQuery("FROM Administrador WHERE id_Admin = :id_Admin", Administrador.class);
-            query.setParameter("id_Admin", id);
-            List<Administrador> resultList = query.getResultList();
-            if (!resultList.isEmpty()){
-                return true;
+            //Cojemos el id del usuario en funcion del mail introducido
+            TypedQuery<Integer> idQuery = manager.createQuery("SELECT id FROM Usuario WHERE mail = :mail", Integer.class);
+            idQuery.setParameter("mail", mail);
+            List<Integer> idResultList = idQuery.getResultList();
+            if (!idResultList.isEmpty()) {
+                int id = idResultList.get(0);
+                // Comprobamos que el usuario es un administrador
+                TypedQuery<Administrador> adminQuery = manager.createQuery("FROM Administrador WHERE id_Admin = :id_Admin", Administrador.class);
+                adminQuery.setParameter("id_Admin", id);
+                List<Administrador> adminResultList = adminQuery.getResultList();
+                manager.close();
+                return !adminResultList.isEmpty() && adminResultList.get(0) != null;
             }
             manager.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
