@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 import static com.example.aerolineascanary7islands.controllers.LoginController.atributoUsuario;
@@ -21,7 +22,7 @@ public class PerfilController {
     private ComboBox comboBoxFields;
 
     @FXML
-    private Label textFieldUpdate;
+    public TextField textFieldUpdate;
 
     @FXML
     private Label labelNew;
@@ -37,6 +38,9 @@ public class PerfilController {
 
     @FXML
     private Label labelTelefono;
+
+    private String selectedValue = "";
+
 
     public void initialize(){
         /*
@@ -59,8 +63,17 @@ public class PerfilController {
         labelMail.setText(atributoUsuario.getMail());
         labelTelefono.setText(String.valueOf(atributoUsuario.getTlf()));
 
+        comboBoxFields.valueProperty().addListener((obs, oldValue, newValue) -> {
+            // Acciones a realizar cuando cambia la selección del ComboBox
+            selectedValue = newValue.toString();
+            labelNew.setText("Nuevo " + newValue + ":");
+        });
+
+        if (pane2.isVisible()) {
+            pane2.setVisible(false);
+        }
     }
-    
+
 
     public void atras(){
         cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml","Vuelos", labelTitle);
@@ -71,17 +84,26 @@ public class PerfilController {
         if (pane2.isVisible()){
             pane2.setVisible(false);
         }else {
+
             pane2.setVisible(true);
         }
     }
 
     public void confirmar(){
+
         if (textFieldUpdate.getText() != ""){
-            updateUser(atributoUsuario, comboBoxFields.getValue().toString(), textFieldUpdate.getText());
+            if (updateUser(atributoUsuario, selectedValue, textFieldUpdate.getText())){
+                cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml", "pefil", labelTitle);
+
+            }else {
+                MethodsForControllers.showAlert("ERROR","Ese valor nos es valido para el campo " + selectedValue, Alert.AlertType.ERROR);
+            };
         }else {
                MethodsForControllers.showAlert("ERROR","El campo a actualizar esta vacio", Alert.AlertType.ERROR);
         }
     }
+
+
 
 
 }

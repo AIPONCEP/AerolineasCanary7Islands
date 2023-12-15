@@ -4,48 +4,94 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="700.0" minWidth="1070.0" prefHeight="700.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.TicketsController">
+<AnchorPane minHeight="700.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: sky;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.TicketsController">
    <children>
-      <Label layoutX="757.0" layoutY="624.0" text="Reservar vuelo">
+      <Label layoutX="32.0" layoutY="647.0" onMouseClicked="#salir" text="Salir">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <StackPane fx:id="carrousel" layoutX="168.0" layoutY="168.0" prefHeight="371.0" prefWidth="730.0">
+      <Label layoutX="428.0" layoutY="647.0" text="Reservar vuelo">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <StackPane fx:id="carrousel" layoutY="123.0" prefHeight="498.0" prefWidth="1000.0">
          <children>
-            <ImageView fx:id="imageView2" fitHeight="372.0" fitWidth="734.0">
-               <image>
-                  <Image url="@../../../Imagenes/Tenerife.jpg" />
-               </image>
-            </ImageView>
-            <Label fx:id="tenerifeLabel" text="Tenerife" textFill="#191b14">
-               <font>
-                  <Font name="Impact" size="64.0" />
-               </font>
-            </Label>
-            <Label fx:id="granCanariaLabel" text="Gran Canaria" textFill="#191b14">
-               <font>
-                  <Font name="Impact" size="64.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="imageView1" fitHeight="372.0" fitWidth="734.0">
-               <image>
-                  <Image url="@../../../Imagenes/GranCanaria.jpg" />
-               </image>
-            </ImageView>
+            <Pane fx:id="pane2" prefHeight="621.0" prefWidth="899.0">
+               <children>
+                  <ImageView fx:id="imageView2" fitHeight="498.0" fitWidth="1000.0">
+                     <image>
+                        <Image url="@../../../Imagenes/Tenerife.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane opacity="0.2" prefHeight="497.0" prefWidth="1000.0" style="-fx-background-color: black;" />
+                  <Label fx:id="tenerifeLabel" layoutX="14.0" text="Tenerife" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="96.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="granCanariaLabel12" layoutX="19.0" layoutY="104.0" text="Ida y vuelta" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="granCanariaLabel112" layoutX="19.0" layoutY="132.0" text="Desde" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="granCanariaLabel1111" layoutX="14.0" layoutY="160.0" text="20,99€" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pane1" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageView1" fitHeight="497.0" fitWidth="1000.0">
+                     <image>
+                        <Image url="@../../../Imagenes/GranCanaria.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane opacity="0.2" prefHeight="498.0" prefWidth="1000.0" style="-fx-background-color: black;" />
+                  <Label fx:id="granCanariaLabel" layoutX="14.0" text="Gran Canaria" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="96.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="granCanariaLabel1" layoutX="19.0" layoutY="104.0" text="Ida y vuelta" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="granCanariaLabel11" layoutX="19.0" layoutY="132.0" text="Desde" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="granCanariaLabel111" layoutX="14.0" layoutY="160.0" text="30,99€" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children></StackPane>
-      <ImageView fitHeight="45.0" fitWidth="43.0" layoutX="14.0" layoutY="8.0" onMouseClicked="#perfilClick">
+      <ImageView fitHeight="73.0" fitWidth="78.0" layoutX="14.0" layoutY="20.0" onMouseClicked="#perfilClick">
          <image>
             <Image url="@../../../Imagenes/usuario.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelTitle" layoutX="449.0" layoutY="44.0" prefHeight="79.0" prefWidth="172.0" text="Viajes">
+      <Label fx:id="labelTitle" layoutX="418.0" layoutY="14.0" prefHeight="79.0" prefWidth="172.0" text="Viajes">
          <font>
             <Font name="Impact" size="64.0" />
          </font>

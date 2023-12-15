@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
@@ -13,6 +14,12 @@ import static com.example.aerolineascanary7islands.controllers.MethodsForControl
 public class TicketsController {
     @FXML
     private StackPane carrousel;
+
+    @FXML
+    private Pane pane1;
+
+    @FXML
+    private Pane pane2;
 
     @FXML
     private Label labelTitle;
@@ -35,7 +42,7 @@ public class TicketsController {
 
 
         // Inicializar la animación para cambiar las imágenes
-        Duration duration = Duration.seconds(10); // Cambia cada 3 segundos (puedes ajustar este valor)
+        Duration duration = Duration.seconds(4); // Cambia cada 3 segundos (puedes ajustar este valor)
         Timeline timeline = new Timeline(new KeyFrame(duration, e -> cambiarImagen()));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
@@ -46,18 +53,19 @@ public class TicketsController {
         cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml","Informacion personal", labelTitle);
     }
 
+    public void salir(){
+        cambiarScene("/com/example/aerolineascanary7islands/main-view.fxml", "Main", labelTitle);
+    }
+
     private void cambiarImagen() {
         if (indice == 0) {
-            imageView1.setVisible(false);
-            imageView2.setVisible(true);
-            granCanariaLabel.setVisible(false);
-            tenerifeLabel.setVisible(true);
+            pane1.setVisible(false);
+            pane2.setVisible(true);
+
             indice = 1;
         } else {
-            imageView2.setVisible(false);
-            imageView1.setVisible(true);
-            granCanariaLabel.setVisible(true);
-            tenerifeLabel.setVisible(false);
+            pane1.setVisible(true);
+            pane2.setVisible(false);
             indice = 0;
         }
     }
