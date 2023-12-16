@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
@@ -18,7 +21,7 @@
             <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="428.0" layoutY="647.0" text="Reservar vuelo">
+      <Label layoutX="428.0" layoutY="647.0" onMouseClicked="#reservar" text="Reservar vuelo">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
@@ -112,5 +115,48 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <Pane fx:id="paneBg" layoutY="-2.0" opacity="0.3" prefHeight="710.0" prefWidth="1000.0" style="-fx-background-color: black;" />
+      <Pane fx:id="paneSelection" prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="448.0" layoutY="107.0" onMouseClicked="#buscarVuelo" text="Buscar Vuelo">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox layoutX="170.0" layoutY="64.0" prefHeight="43.0" prefWidth="660.0" spacing="20.0">
+               <children>
+                  <ComboBox fx:id="comboBoxOrigen" prefWidth="150.0" />
+                  <ComboBox fx:id="comboBoxDestino" prefWidth="150.0" />
+                  <Spinner fx:id="spinnerIda" />
+                  <Spinner fx:id="spinnerVuelta" />
+               </children>
+            </HBox>
+            <Label layoutX="391.0" layoutY="41.0" text="Destino">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="538.0" layoutY="41.0" text="Fecha de ida">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="698.0" layoutY="41.0" text="Fecha de vuelta">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="222.0" layoutY="41.0" text="Origen">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="228.0" layoutY="107.0" onMouseClicked="#salirPane" text="Salir">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
