@@ -16,6 +16,7 @@ public class VuelosController implements Initializable {
 
     }
     public void crearVuelos(MouseEvent mouseEvent) {
+        MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/makeTravelView.fxml","Crear vuelos",panelControlDeVuelos);
     }
     public void eliminarVuelos(MouseEvent mouseEvent) {
     }

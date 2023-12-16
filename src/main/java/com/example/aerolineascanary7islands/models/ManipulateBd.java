@@ -19,7 +19,6 @@ public class ManipulateBd extends Application {
         manager.getTransaction().commit();
         manager.close();
     }
-
     public static void updateBd(Object object){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();

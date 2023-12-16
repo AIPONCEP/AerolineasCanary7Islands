@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 @Entity
 @Table(name="vuelos")
-public class Vuelos implements Serializable {
+public class Vuelo implements Serializable {
    /*
    Cod_Vuelo VARCHAR(10) PRIMARY KEY NOT NULL,
    Precio FLOAT NOT NULL,
@@ -35,7 +35,7 @@ public class Vuelos implements Serializable {
     private int plazas_Turista;
     @Column(name = "Plazas_Primera")
     private int plazas_Primera;
-    public Vuelos() {
+    public Vuelo() {
         this.cod_Vuelo = "";
         this.precio = 0.0F;
         this.fecha_Salida = "";
@@ -45,9 +45,9 @@ public class Vuelos implements Serializable {
         this.plazas_Turista = 0;
         this.plazas_Primera = 0;
     }
-    public Vuelos(String cod_Vuelo, float precio, String fecha_Salida,
-                  String fecha_Llegada, String destino, String procedencia,
-                  int plazas_Turista, int plazas_Primera) {
+    public Vuelo(String cod_Vuelo, float precio, String fecha_Salida,
+                 String fecha_Llegada, String destino, String procedencia,
+                 int plazas_Turista, int plazas_Primera) {
         this.cod_Vuelo = cod_Vuelo;
         this.precio = precio;
         this.fecha_Salida = fecha_Salida;
