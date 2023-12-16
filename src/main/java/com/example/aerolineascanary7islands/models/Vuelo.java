@@ -8,16 +8,6 @@ import java.io.Serializable;
 @Entity
 @Table(name="vuelos")
 public class Vuelo implements Serializable {
-   /*
-   Cod_Vuelo VARCHAR(10) PRIMARY KEY NOT NULL,
-   Precio FLOAT NOT NULL,
-   Fecha_Salida VARCHAR(19) NOT NULL,  -- formato fechas: "YYYY-MM-DD HH:MI:SS"
-   Fecha_Llegada VARCHAR(19) NOT NULL,
-   Destino VARCHAR(50) NOT NULL,
-   Procedencia VARCHAR(50) NOT NULL,
-   Plazas_Turista INT,
-   Plazas_Primera INT
-   */
     @Id
     @Column(name="Cod_Vuelo")
     private String cod_Vuelo;

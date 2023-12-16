@@ -32,7 +32,7 @@ public class MakeTravelController implements Initializable {
     public TextField tF_plazas_Primera;
     @FXML
     public Label crearVueloTitle;
-
+    private String expRegularFecha = "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}";
     /**
      * Se declara initialize para rellenar combos de la vista con los posibles destinos y la procedencia de los vuelos.
      * @param url
@@ -57,17 +57,21 @@ public class MakeTravelController implements Initializable {
               !tF_plazas_Turista.getText().isEmpty() && !tF_plazas_Primera.getText().isEmpty()) {
                if(cB_procedencia.getValue()!=null && cB_destino.getValue()!= null) {
                    if(cB_procedencia.getValue()!=cB_destino.getValue()) {
-                       Vuelo vuelo = new Vuelo(tF_cod_Vuelo.getText(), Float.parseFloat(tF_precio.getText()), tF_fecha_Salida.getText(), tF_fecha_Llegada.getText(),
-                       cB_destino.getValue().toString(), cB_procedencia.getValue().toString(), Integer.parseInt(tF_plazas_Turista.getText()), Integer.parseInt(tF_plazas_Primera.getText()));
-                       ManipulateBd.insert(vuelo);
-                       tF_cod_Vuelo.setText("");
-                       tF_precio.setText("");
-                       tF_fecha_Salida.setText("");
-                       tF_fecha_Llegada.setText("");
-                       cB_destino.getSelectionModel().clearSelection();
-                       cB_procedencia.getSelectionModel().clearSelection();
-                       tF_plazas_Turista.setText("");
-                       tF_plazas_Primera.setText("");
+                       if(tF_fecha_Llegada.getText().matches(expRegularFecha) && tF_fecha_Salida.getText().matches(expRegularFecha)) {
+                           Vuelo vuelo = new Vuelo(tF_cod_Vuelo.getText(), Float.parseFloat(tF_precio.getText()), tF_fecha_Salida.getText(), tF_fecha_Llegada.getText(),
+                                   cB_destino.getValue().toString(), cB_procedencia.getValue().toString(), Integer.parseInt(tF_plazas_Turista.getText()), Integer.parseInt(tF_plazas_Primera.getText()));
+                           ManipulateBd.insert(vuelo);
+                           tF_cod_Vuelo.setText("");
+                           tF_precio.setText("");
+                           tF_fecha_Salida.setText("");
+                           tF_fecha_Llegada.setText("");
+                           cB_destino.getSelectionModel().clearSelection();
+                           cB_procedencia.getSelectionModel().clearSelection();
+                           tF_plazas_Turista.setText("");
+                           tF_plazas_Primera.setText("");
+                       }else{
+                           MethodsForControllers.showAlert("Error","El formato de fecha llegada y salida debe ser 'YYYY-MM-DD HH:MI:SS'", Alert.AlertType.ERROR);
+                       }
                    }else{
                        MethodsForControllers.showAlert("Error","El destino y la procedencia no pueden ser iguales", Alert.AlertType.ERROR);
                    }
