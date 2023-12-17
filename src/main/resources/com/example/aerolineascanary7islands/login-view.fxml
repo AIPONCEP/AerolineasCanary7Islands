@@ -59,30 +59,60 @@
          <font>
             <Font name="Calibri" size="24.0" />
          </font></PasswordField>
-      <Pane layoutX="70.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="129.0" layoutY="677.0" text="Enviar">
+      <Pane layoutX="841.0" layoutY="677.0" onMouseClicked="#send" opacity="0.6" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="849.0" layoutY="683.0" onMouseClicked="#send" text="Enviar">
          <font>
-            <Font name="Calibri" size="26.0" />
+            <Font name="Impact" size="26.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.16862745583057404" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Pane layoutX="797.0" layoutY="672.0" opacity="0.6" prefHeight="45.0" prefWidth="174.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="804.0" layoutY="677.0" text="Registrarse">
+      <Pane layoutX="47.0" layoutY="678.0" onMouseClicked="#registerClick" opacity="0.6" prefHeight="45.0" prefWidth="179.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="95.0" layoutY="684.0" onMouseClicked="#registerClick" text="Registrarse">
          <font>
-            <Font name="Calibri" size="26.0" />
+            <Font name="Impact" size="26.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.16862745583057404" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="76.0" layoutY="672.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="928.0" layoutY="678.0" onMouseClicked="#send" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Iconos/flechaRoja.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="925.0" layoutY="672.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="48.0" layoutY="678.0" onMouseClicked="#registerClick" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
          <image>
             <Image url="@../../../Iconos/flechaRoja.png" />
          </image>
       </ImageView>
-      <Pane layoutX="70.0" layoutY="672.0" onMouseClicked="#send" opacity="0.25" prefHeight="45.0" prefWidth="135.0" />
-      <Pane layoutX="797.0" layoutY="672.0" onMouseClicked="#registerClick" opacity="0.25" prefHeight="45.0" prefWidth="174.0" />
       <ImageView fitHeight="45.0" fitWidth="73.0" layoutX="708.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Iconos/avion.png" />
