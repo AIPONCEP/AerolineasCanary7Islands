@@ -11,20 +11,20 @@ import static com.example.aerolineascanary7islands.models.RegisterLoginModel.man
 
 public class TicketsModel {
 
-    public static List<Vuelo> findVuelo(String procedencia, String destino, String fechaSalida, String fechaVuelta) {
+    public static List<Vuelo> findVuelo(String procedencia, String destino, String fechaInicial, String fechaFinal) {
         EntityManager manager = null;
         try {
             manager = managerFactory.createEntityManager();
-            String fechaSalidaHoras = fechaSalida + " 00:00:00";
-            String fechaVueltaHoras = fechaVuelta + " 00:00:00";
+            String fechaInicialHoras = fechaInicial + " 00:00:00";
+            String fechaFinalHoras = fechaFinal + " 00:00:00";
             TypedQuery<Vuelo> query = manager.createQuery(
                     "FROM Vuelo v WHERE v.procedencia = :procedencia " +
-                            "AND v.destino = :destino AND v.fecha_Salida >= :fechaSalida " +
-                            "AND v.fecha_Llegada <= :fechaVuelta", Vuelo.class);
+                            "AND v.destino = :destino AND v.fecha_Salida >= :fechaInicial " +
+                            "AND v.fecha_Salida <= :fechaFinal", Vuelo.class);
             query.setParameter("procedencia", procedencia);
             query.setParameter("destino", destino);
-            query.setParameter("fechaSalida", fechaSalidaHoras);
-            query.setParameter("fechaVuelta", fechaVueltaHoras);
+            query.setParameter("fechaInicial", fechaInicialHoras);
+            query.setParameter("fechaFinal", fechaFinalHoras);
 
             List<Vuelo> resultList = query.getResultList();
             if (!resultList.isEmpty()) {
@@ -39,6 +39,4 @@ public class TicketsModel {
         }
         return null;
     }
-
-
 }
