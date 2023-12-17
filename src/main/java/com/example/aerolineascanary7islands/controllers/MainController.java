@@ -8,11 +8,7 @@ import static com.example.aerolineascanary7islands.controllers.MethodsForControl
 public class MainController {
     @FXML
     private Label mainTitle;
-    public void initialize(){
-
-    }
     public void loginClick(){
         cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml", "login", mainTitle);
     }
-
 }

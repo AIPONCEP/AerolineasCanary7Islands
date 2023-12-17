@@ -20,7 +20,6 @@ public class Usuario implements Serializable {
     private int tlf;
     @OneToOne(mappedBy = "usuario")
     private Administrador administrador;
-
     public Usuario() {
         this.id = 0;
         this.nombre = null;
@@ -34,19 +33,15 @@ public class Usuario implements Serializable {
         this.mail = mail;
         this.tlf = tlf;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public Administrador getAdministrador() {
         return administrador;
     }
-
     public void setAdministrador(Administrador administrador) {
         this.administrador = administrador;
     }
-
     public int getId() {
         return id;
     }
@@ -74,7 +69,6 @@ public class Usuario implements Serializable {
     public void setTlf(int tlf) {
         this.tlf = tlf;
     }
-
     @Override
     public String toString() {
         return "Usuario{" +

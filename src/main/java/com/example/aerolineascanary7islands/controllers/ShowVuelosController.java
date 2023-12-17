@@ -11,7 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -36,7 +35,6 @@ public class ShowVuelosController implements Initializable {
         tablaVuelos.getItems().clear();
         tablaVuelos.getItems().addAll(vuelos);
     }
-
     public void eliminarVuelos(MouseEvent mouseEvent) {
     }
     /**
@@ -76,7 +74,6 @@ public class ShowVuelosController implements Initializable {
         TableColumn<Vuelo, Integer> colPlazasPrimera = (TableColumn<Vuelo, Integer>) tablaVuelos.getColumns().get(7);
         colPlazasPrimera.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getPlazas_Primera()).asObject());
     }
-
     public void actualizarVuelo(MouseEvent mouseEvent) {
     }
 }

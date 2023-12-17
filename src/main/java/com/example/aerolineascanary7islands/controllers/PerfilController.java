@@ -14,33 +14,23 @@ import static com.example.aerolineascanary7islands.models.PerfilModel.updateUser
 public class PerfilController {
     @FXML
     private Label labelTitle;
-
     @FXML
     private Pane pane2;
-
     @FXML
     private ComboBox comboBoxFields;
-
     @FXML
     public TextField textFieldUpdate;
-
     @FXML
     private Label labelNew;
-
     @FXML
     private Label labelContraseña;
-
     @FXML
     private Label labelNombre;
-
     @FXML
     private Label labelMail;
-
     @FXML
     private Label labelTelefono;
-
     private String selectedValue = "";
-
 
     public void initialize(){
         /*
@@ -52,7 +42,6 @@ public class PerfilController {
         comboBoxFields.getItems().add("Fuerteventura");
         comboBoxFields.getItems().add("Lanzarote");
          */
-
         comboBoxFields.getItems().add("Nombre");
         comboBoxFields.getItems().add("Contraseña");
         comboBoxFields.getItems().add("Mail");
@@ -68,33 +57,25 @@ public class PerfilController {
             selectedValue = newValue.toString();
             labelNew.setText("Nuevo " + newValue + ":");
         });
-
         if (pane2.isVisible()) {
             pane2.setVisible(false);
         }
     }
-
-
     public void atras(){
         cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml","Vuelos", labelTitle);
-
     }
-
     public void actualizar(){
         if (pane2.isVisible()){
             pane2.setVisible(false);
         }else {
-
             pane2.setVisible(true);
         }
     }
-
     public void confirmar(){
 
         if (textFieldUpdate.getText() != ""){
             if (updateUser(atributoUsuario, selectedValue, textFieldUpdate.getText())){
                 cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml", "pefil", labelTitle);
-
             }else {
                 MethodsForControllers.showAlert("ERROR","Ese valor nos es valido para el campo " + selectedValue, Alert.AlertType.ERROR);
             };
@@ -102,8 +83,4 @@ public class PerfilController {
                MethodsForControllers.showAlert("ERROR","El campo a actualizar esta vacio", Alert.AlertType.ERROR);
         }
     }
-
-
-
-
 }

@@ -14,7 +14,6 @@ import static com.example.aerolineascanary7islands.controllers.TicketsController
 public class TicketsVuelosController {
     @FXML
     private VBox dynamicContainer;
-
     public void initialize() {
         // Lógica para agregar paneles con texto y botones en la misma fila
         for (int i = 0; i < vuelosLista.toArray().length; i++) {
