@@ -25,4 +25,12 @@ public class VuelosModel {
             manager.close();
         }
     }
+    public static List<Vuelo> obtenerTodosLosVuelos() {
+        EntityManager manager = managerFactory.createEntityManager();
+        try {
+            return manager.createQuery("FROM Vuelo", Vuelo.class).getResultList();
+        } finally {
+            manager.close();
+        }
+    }
 }

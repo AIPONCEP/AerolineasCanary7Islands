@@ -10,7 +10,7 @@ USE Aerolinea;
 -- Creación de la tabla Vuelo primero (ya que otras tablas dependen de ella)
 CREATE TABLE Vuelos (
    Cod_Vuelo VARCHAR(10) PRIMARY KEY NOT NULL,
-   Precio FLOAT NOT NULL,  
+   Precio FLOAT NOT NULL,
    Fecha_Salida VARCHAR(19) NOT NULL,  -- formato fechas: "YYYY-MM-DD HH:MI:SS"
    Fecha_Llegada VARCHAR(19) NOT NULL,
    Destino VARCHAR(50) NOT NULL,
@@ -46,20 +46,26 @@ CREATE TABLE Administradores(
 CREATE TABLE BilletesComprados (
    Fecha VARCHAR(30) NOT NULL,
    CodVuelo VARCHAR(10) NOT NULL,
-   IdPasajero INT NOT NULL,   
+   IdPasajero INT NOT NULL,
    PRIMARY KEY (Fecha, CodVuelo, IdPasajero),
    FOREIGN KEY (IdPasajero) REFERENCES Pasajeros(Id_Pasajero),
    FOREIGN KEY (CodVuelo) REFERENCES Vuelos(Cod_Vuelo)
 );
 
-INSERT INTO Usuarios (Nombre, Contraseña, Mail, Tlf) VALUES ("Ana","123","lineasCanary7Island@gmail.com",928417756);
+INSERT INTO Usuarios (Nombre, Contraseña, Mail, Tlf) VALUES ("Ana","123","Canary7IslandAIPonceP@gmail.com",928418775);
 INSERT INTO Administradores (Sueldo) values (2000);
--- Insertar vuelos
-INSERT INTO Vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
-VALUES ('ABC123', 250.00, '2023-12-20 08:00:00', '2023-12-21 10:30:00', 'Tenerife', 'Gran Canaria', 100, 20);
 
-INSERT INTO Vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
-VALUES ('DEF456', 180.50, '2023-12-22 12:30:00', '2023-12-23 14:45:00', 'Gran Canaria', 'Tenerife', 120, 15);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("GC01", 100, "2023-12-20 10:00:00", "2023-12-20 12:00:00", "Gran Canaria", "Tenerife", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("GC02", 120, "2023-12-21 10:00:00", "2023-12-21 12:00:00", "Gran Canaria", "Lanzarote", 100, 20);
 
-INSERT INTO Vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
-VALUES ('GHI789', 300.75, '2023-12-25 09:15:00', '2023-12-26 13:00:00', 'Tenerife', 'Gran Canaria', 200, 30);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("T01", 130, "2023-12-22 16:00:00", "2023-12-22 18:00:00", "Tenerife","Gran Canaria", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("T02", 180, "2023-12-23 15:00:00", "2023-12-23 17:00:00", "Tenerife","El Hierro", 100, 20);
+
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("LZ01", 100, "2023-12-23 12:00:00", "2023-12-23 14:00:00", "Lanzarote","Gran Canaria", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("LZ02", 200, "2023-12-24 09:00:00", "2023-12-24 11:00:00", "Lanzarote","La Gomera", 100, 20);

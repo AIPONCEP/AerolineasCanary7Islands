@@ -2,15 +2,11 @@ package com.example.aerolineascanary7islands.models;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import static com.example.aerolineascanary7islands.models.RegisterLoginModel.managerFactory;
 
 public class TicketsModel {
-
     public static List<Vuelo> findVuelo(String procedencia, String destino, String fechaInicial, String fechaFinal) {
         EntityManager manager = null;
         try {

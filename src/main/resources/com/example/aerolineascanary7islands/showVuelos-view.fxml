@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="676.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.ShowVuelosController">
+    <children>
+        <ImageView fitHeight="766.0" fitWidth="1170.0" layoutX="-40.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Imagenes/aeropuerto.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="panelControlDeVuelos" layoutX="208.0" layoutY="27.0" text="Panel de Control de Vuelos">
+            <font>
+                <Font name="Impact" size="64.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.9605262875556946" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color blue="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+      <Pane layoutX="880.0" layoutY="363.0" onMouseClicked="#mostrarVuelos" opacity="0.4" prefHeight="38.0" prefWidth="178.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Pane layoutX="58.0" layoutY="650.0" onMouseClicked="#actualizarVuelo" opacity="0.4" prefHeight="38.0" prefWidth="269.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Pane layoutX="757.0" layoutY="650.0" onMouseClicked="#crearVuelos" opacity="0.4" prefHeight="38.0" prefWidth="301.0" style="-fx-background-color: white; -fx-border-color: black;" />
+        <Label layoutX="894.0" layoutY="368.0" onMouseClicked="#mostrarVuelos" text="Mostrar Vuelos">
+            <font>
+                <Font name="Calibri" size="24.0" />
+            </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9605262875556946" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+        </Label>
+        <Label layoutX="116.0" layoutY="648.0" onMouseClicked="#actualizarVuelo" text="Actualizar Vuelo">
+            <font>
+                <Font name="Impact" size="30.0" />
+            </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9605262875556946" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+        </Label>
+      <Pane layoutX="58.0" layoutY="396.0" onMouseClicked="#eliminarVuelos" opacity="0.4" prefHeight="38.0" prefWidth="161.0" style="-fx-background-color: white; -fx-border-color: black;" />
+        <Label layoutX="68.0" layoutY="400.0" onMouseClicked="#eliminarVuelos" text="Eliminar Vuelo">
+            <font>
+                <Font name="Calibri" size="24.0" />
+            </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9605262875556946" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+        </Label>
+        <TextField fx:id="textF_EliminarVueloXCod" layoutX="58.0" layoutY="434.0" prefHeight="49.0" prefWidth="364.0" promptText="Introduzca el Código del Vuelo a Eliminar " style="-fx-background-color: white; -fx-border-color: grey; -fx-text-fill: black;">
+            <font>
+                <Font name="Calibri" size="20.0" />
+            </font></TextField>
+        <Label layoutX="770.0" layoutY="650.0" onMouseClicked="#crearVuelos" text="Crear Nuevo Vuelo">
+            <font>
+                <Font name="Impact" size="30.0" />
+            </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9605262875556946" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+        </Label>
+        <TableView fx:id="tablaVuelos" layoutX="58.0" layoutY="125.0" prefHeight="238.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-border-color: grey; -fx-text-fill: grey;">
+         <columns>
+            <TableColumn id="col_Cod_Vuelo" prefWidth="108.0" resizable="false" text="Cod_Vuelo" />
+            <TableColumn id="col_Precio" prefWidth="111.0" resizable="false" text="Precio" />
+            <TableColumn id="col_Fecha_Salida" minWidth="4.0" prefWidth="128.0" resizable="false" text="Fecha_Salida" />
+            <TableColumn id="col_Fecha_Llegada" prefWidth="133.0" resizable="false" text="Fecha_Llegada" />
+            <TableColumn id="col_Destino" minWidth="0.0" prefWidth="128.0" resizable="false" text="Destino" />
+            <TableColumn id="col_Procedencia" prefWidth="131.0" resizable="false" text="Procedencia" />
+            <TableColumn id="col_Plazas_Turista" minWidth="9.0" prefWidth="129.0" resizable="false" text="Plazas_Turista" />
+            <TableColumn id="col_Plazas_Primera" prefWidth="130.0" resizable="false" text="Plazas_Primera" />
+         </columns></TableView>
+      <ImageView fitHeight="60.0" fitWidth="54.0" layoutX="58.0" layoutY="642.0" onMouseClicked="#actualizarVuelo" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+         <image>
+            <Image url="@../../../Iconos/flechaRoja.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="54.0" layoutX="1004.0" layoutY="642.0" onMouseClicked="#crearVuelos" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Iconos/flechaRoja.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

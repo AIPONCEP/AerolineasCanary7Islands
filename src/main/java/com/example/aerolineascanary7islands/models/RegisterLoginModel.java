@@ -24,7 +24,6 @@ public class RegisterLoginModel {
         }
      return null;
     }
-
     /**
      * esAdministrador comprueba que el usuario esté registrado en la tabla administradores
      * @param idUsuario se pasa el id que se supone se conoce previamente, ya que los administradores

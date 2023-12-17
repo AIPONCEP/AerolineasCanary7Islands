@@ -86,6 +86,6 @@ public class MakeTravelController implements Initializable {
         }
     }
     public void volver(MouseEvent mouseEvent) {
-        MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/vuelos-view.fxml","Panel de control de vuelos",crearVueloTitle);
+        MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/showVuelos-view.fxml","Panel de control de vuelos",crearVueloTitle);
     }
 }

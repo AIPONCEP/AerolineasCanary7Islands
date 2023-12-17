@@ -25,7 +25,7 @@ public class LoginController {
         if (usuario != null){
             atributoUsuario = usuario;
             if(esAdministrador(1,textFieldEmail.getText())){
-                cambiarScene("/com/example/aerolineascanary7islands/vuelos-view.fxml","Panel de Control de Vuelos",loginTitle);
+                cambiarScene("/com/example/aerolineascanary7islands/showVuelos-view.fxml","Panel de Control de Vuelos",loginTitle);
             }else {
                 cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml", "login", loginTitle);
             }
