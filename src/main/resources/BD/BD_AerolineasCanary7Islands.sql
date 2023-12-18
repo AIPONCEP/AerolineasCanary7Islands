@@ -69,3 +69,23 @@ Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Pro
 VALUES ("LZ01", 100, "2023-12-23 12:00:00", "2023-12-23 14:00:00", "Lanzarote","Gran Canaria", 100, 20);
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
 VALUES ("LZ02", 200, "2023-12-24 09:00:00", "2023-12-24 11:00:00", "Lanzarote","La Gomera", 100, 20);
+
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("FT01", 130, "2024-01-01 13:00:00", "2024-01-01 15:00:00", "Fuerteventura","Tenerife", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("FT02", 90, "2024-02-05 09:00:00", "2024-02-05 11:00:00", "Fuerteventura","La Palma", 100, 20);
+
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("GM01", 130, "2024-01-15 14:00:00", "2024-01-15 16:00:00", "La Gomera","Tenerife", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("GM02", 90, "2024-02-05 09:30:00", "2024-02-05 11:30:00", "La Gomera","El Hierro", 100, 20);
+
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("LP01", 130, "2024-01-17 14:00:00", "2024-01-17 16:00:00", "La Palma","Gran Canaria", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("LP02", 90, "2024-02-06 09:30:00", "2024-02-06 11:30:00", "La Palma","Lanzarote", 100, 20);
+
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("EH01", 130, "2023-12-24 16:00:00", "2023-12-24 18:00:00", "El Hierro","Lanzarote", 100, 20);
+Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES ("EH02", 180, "2023-12-27 15:00:00", "2023-12-27 17:00:00", "El Hierro","Fuerteventura", 100, 20);
