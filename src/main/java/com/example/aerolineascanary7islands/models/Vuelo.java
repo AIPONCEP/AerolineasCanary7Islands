@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,6 +28,10 @@ public class Vuelo implements Serializable {
     private int plazas_Turista;
     @Column(name = "Plazas_Primera")
     private int plazas_Primera;
+
+    @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL)
+    private List<BilletesComprados> billetesCompradosList;
+
     public Vuelo() {
         this.cod_Vuelo = "";
         this.precio = 0.0F;
@@ -36,10 +41,12 @@ public class Vuelo implements Serializable {
         this.procedencia = "";
         this.plazas_Turista = 0;
         this.plazas_Primera = 0;
+        this.billetesCompradosList = new ArrayList<>();
+
     }
     public Vuelo(String cod_Vuelo, float precio, String fecha_Salida,
                  String fecha_Llegada, String destino, String procedencia,
-                 int plazas_Turista, int plazas_Primera) {
+                 int plazas_Turista, int plazas_Primera, List<BilletesComprados> billetesCompradosList) {
         this.cod_Vuelo = cod_Vuelo;
         this.precio = precio;
         this.fecha_Salida = fecha_Salida;
@@ -48,6 +55,7 @@ public class Vuelo implements Serializable {
         this.procedencia = procedencia;
         this.plazas_Turista = plazas_Turista;
         this.plazas_Primera = plazas_Primera;
+        this.billetesCompradosList = billetesCompradosList;
     }
     public String getCod_Vuelo() {
         return cod_Vuelo;
@@ -97,7 +105,6 @@ public class Vuelo implements Serializable {
     public void setPlazas_Primera(int plazas_Primera) {
         this.plazas_Primera = plazas_Primera;
     }
-
     public static boolean validarFechas(String fecha_Salida, String fecha_Llegada) {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -108,5 +115,8 @@ public class Vuelo implements Serializable {
             e.printStackTrace();
             return false;
         }
+    }
+    public void addBilletesCompradosVuelosList(BilletesComprados billete){
+        this.billetesCompradosList.add(billete);
     }
 }
