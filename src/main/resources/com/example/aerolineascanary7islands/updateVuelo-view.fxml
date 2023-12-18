@@ -70,8 +70,8 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="761.0" layoutY="554.0" opacity="0.6" prefHeight="59.0" prefWidth="198.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
-      <Label layoutX="799.0" layoutY="566.0" text="Actualizar">
+      <Pane layoutX="799.0" layoutY="554.0" opacity="0.6" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
+      <Label layoutX="819.0" layoutY="559.0" text="Actualizar">
          <font>
             <Font name="Impact" size="30.0" />
          </font>
@@ -92,5 +92,32 @@
             </LinearGradient>
          </textFill>
       </Label>
+      <Pane layoutX="37.0" layoutY="745.0" opacity="0.6" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
+      <Label layoutX="113.0" layoutY="748.0" text="Volver">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.23333333432674408" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="102.0" fitWidth="49.0" layoutX="47.0" layoutY="743.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+         <image>
+            <Image url="@../../../Iconos/flechaRoja.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -10,44 +10,79 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #44a7e2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.TicketsVuelosController">
    <children>
-      <ImageView fitHeight="421.0" fitWidth="1008.0" layoutX="-4.0" layoutY="286.0">
+      <ImageView fitHeight="707.0" fitWidth="1004.0">
          <image>
             <Image url="@../../../Imagenes/avionEnPista.jpg" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="5.0" layoutY="60.0" prefHeight="295.0" prefWidth="990.0">
+      <ScrollPane layoutX="7.0" layoutY="63.0" prefHeight="295.0" prefWidth="990.0">
          <content>
             <VBox fx:id="dynamicContainer" alignment="CENTER" prefHeight="22.0" prefWidth="988.0" spacing="20.0" />
          </content>
       </ScrollPane>
-      <Label fx:id="labelTitle" layoutX="352.0" text="Vuelos disponible">
+      <Label fx:id="labelTitle" layoutX="325.0" layoutY="2.0" text="Vuelos disponible">
          <font>
-            <Font name="Impact" size="40.0" />
+            <Font name="Impact" size="48.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05000000074505806" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <Pane layoutX="15.0" layoutY="648.0" opacity="0.6" prefHeight="45.0" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="60.0" layoutY="654.0" prefHeight="34.0" prefWidth="69.0" text="Salir">
+      <Pane layoutX="15.0" layoutY="648.0" opacity="0.6" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="69.0" layoutY="651.0" prefHeight="38.0" prefWidth="74.0" text="Salir">
          <font>
-            <Font name="Impact" size="26.0" />
+            <Font name="Impact" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.05000000074505806" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="15.0" layoutY="649.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../../../Iconos/flechaRoja.png" />
          </image>
       </ImageView>
-      <Pane layoutX="14.0" layoutY="647.0" onMouseClicked="#salir" prefHeight="46.0" prefWidth="106.0" />
-      <Pane fx:id="paneAsiento" opacity="0.66" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: black;">
+      <Pane layoutX="15.0" layoutY="647.0" onMouseClicked="#salir" prefHeight="46.0" prefWidth="131.0" />
+      <Pane fx:id="paneAsiento" opacity="0.66" prefHeight="707.0" prefWidth="1004.0" style="-fx-background-color: black;">
          <children>
-            <Pane layoutX="351.0" layoutY="120.0" prefHeight="159.0" prefWidth="299.0" style="-fx-background-color: white;">
+            <Pane layoutX="351.0" layoutY="120.0" prefHeight="159.0" prefWidth="299.0" style="-fx-background-color: white; -fx-border-color: black;">
                <children>
                   <HBox alignment="CENTER" layoutX="50.0" layoutY="65.0" prefHeight="30.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" selected="true" text="Turista">
+                        <RadioButton mnemonicParsing="false" selected="true" text="Turista" textFill="#220000">
                            <toggleGroup>
                               <ToggleGroup fx:id="tipoVuelo" />
                            </toggleGroup>
@@ -55,7 +90,7 @@
                               <Font name="Calibri" size="16.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Premium" toggleGroup="$tipoVuelo">
+                        <RadioButton mnemonicParsing="false" text="Premium" textFill="#220000" toggleGroup="$tipoVuelo">
                            <font>
                               <Font name="Calibri" size="16.0" />
                            </font>
@@ -66,6 +101,22 @@
                      <font>
                         <Font name="Impact" size="26.0" />
                      </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.07619047909975052" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                   </Label>
                   <HBox alignment="CENTER" layoutX="6.0" layoutY="130.0" prefHeight="30.0" prefWidth="287.0" spacing="80.0">
                      <children>
@@ -73,11 +124,43 @@
                            <font>
                               <Font name="Impact" size="20.0" />
                            </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.07619047909975052" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
                         </Label>
                         <Label onMouseClicked="#confirmar" prefHeight="24.0" prefWidth="111.0" text="Confirmar">
                            <font>
                               <Font name="Impact" size="20.0" />
                            </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.07619047909975052" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
                         </Label>
                      </children>
                   </HBox>
