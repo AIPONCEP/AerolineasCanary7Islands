@@ -1,13 +1,11 @@
 package com.example.aerolineascanary7islands.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="vuelos")
@@ -29,6 +27,8 @@ public class Vuelo implements Serializable {
     private int plazas_Turista;
     @Column(name = "Plazas_Primera")
     private int plazas_Primera;
+
+
     public Vuelo() {
         this.cod_Vuelo = "";
         this.precio = 0.0F;

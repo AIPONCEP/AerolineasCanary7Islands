@@ -1,30 +1,25 @@
 package com.example.aerolineascanary7islands.models;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "pasajeros")
 public class Pasajero {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id_Pasajero")
     private int Id_Pasajero;
-    @Column(name="CodVuelo")
-    private String nombre;
     @Column(name="Tipo_plaza")
-    private String contraseña;
-    @Column(name="Mail")
-    private String mail;
-    @Column(name="Tlf")
-    private int tlf;
+    private String Tipo_plaza;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Id_Pasajero")
+    private Usuario usuario;
 
-    public Pasajero(int id_Pasajero, String nombre, String contraseña, String mail, int tlf) {
+    public Pasajero(int id_Pasajero, Vuelo, String tipo_plaza) {
         Id_Pasajero = id_Pasajero;
-        this.nombre = nombre;
-        this.contraseña = contraseña;
-        this.mail = mail;
-        this.tlf = tlf;
+        Tipo_plaza = tipo_plaza;
     }
 
-
+    public Pasajero() {
+        Id_Pasajero = 0;
+       Tipo_plaza = null;
+    }
 }
