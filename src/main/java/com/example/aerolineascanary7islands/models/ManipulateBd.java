@@ -26,6 +26,7 @@ public class ManipulateBd extends Application {
         manager.getTransaction().commit();
         manager.close();
     }
+
     @Override
     public void start(Stage primaryStage) {
 

@@ -1,5 +1,6 @@
 package com.example.aerolineascanary7islands.controllers;
 
+import com.example.aerolineascanary7islands.models.Pasajero;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,6 +23,8 @@ public class TicketsVuelosController {
     @FXML
     public Label labelTitle;
 
+
+
     public void initialize() {
         paneAsiento.setVisible(false);
         int count = 0;
@@ -40,11 +43,13 @@ public class TicketsVuelosController {
 
             int finalI = i; // Se debe declarar finalI como final o usar una variable final para acceder dentro del lambda
 
-            button.setOnAction(event -> {
+            .setOnAction(event -> {
                 paneAsiento.setVisible(true);
+
                 String labelText = ((Label)((HBox) button.getParent()).getChildren().get(0)).getText();
                 System.out.println("Valor del Label en la fila " + (finalI + 1) + ": " + labelText);
-                // Aquí puedes utilizar el valor del Label como desees
+                Pasajero pasajero = new Pasajero();
+
             });
         }
     }
