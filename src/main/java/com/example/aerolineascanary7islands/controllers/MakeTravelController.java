@@ -47,6 +47,7 @@ public class MakeTravelController implements Initializable {
     /**
      * crearVuelo
      * comprueba que los campos no esten vacios, que el destino y la procedencia no sean los mismos y que no sean null.
+     * Comprueba también que la fecha salida sea anterior a la fecha llegada llamando al método validarFechas de la clase Vuelo.
      * Si lo anterior es correcto crea el vuelo nuevo y lo inserta en la base de datos.
      * si no se cumplen las condiciones muestra los respectivos mensajes de error.
      * @param mouseEvent
@@ -58,17 +59,21 @@ public class MakeTravelController implements Initializable {
                if(cB_procedencia.getValue()!=null && cB_destino.getValue()!= null) {
                    if(cB_procedencia.getValue()!=cB_destino.getValue()) {
                        if(tF_fecha_Llegada.getText().matches(expRegularFecha) && tF_fecha_Salida.getText().matches(expRegularFecha)) {
-                           Vuelo vuelo = new Vuelo(tF_cod_Vuelo.getText(), Float.parseFloat(tF_precio.getText()), tF_fecha_Salida.getText(), tF_fecha_Llegada.getText(),
-                                   cB_destino.getValue().toString(), cB_procedencia.getValue().toString(), Integer.parseInt(tF_plazas_Turista.getText()), Integer.parseInt(tF_plazas_Primera.getText()));
-                           ManipulateBd.insert(vuelo);
-                           tF_cod_Vuelo.setText("");
-                           tF_precio.setText("");
-                           tF_fecha_Salida.setText("");
-                           tF_fecha_Llegada.setText("");
-                           cB_destino.getSelectionModel().clearSelection();
-                           cB_procedencia.getSelectionModel().clearSelection();
-                           tF_plazas_Turista.setText("");
-                           tF_plazas_Primera.setText("");
+                           if(Vuelo.validarFechas(tF_fecha_Salida.getText(),tF_fecha_Llegada.getText())){
+                               Vuelo vuelo = new Vuelo(tF_cod_Vuelo.getText(), Float.parseFloat(tF_precio.getText()), tF_fecha_Salida.getText(), tF_fecha_Llegada.getText(),
+                                       cB_destino.getValue().toString(), cB_procedencia.getValue().toString(), Integer.parseInt(tF_plazas_Turista.getText()), Integer.parseInt(tF_plazas_Primera.getText()));
+                               ManipulateBd.insert(vuelo);
+                               tF_cod_Vuelo.setText("");
+                               tF_precio.setText("");
+                               tF_fecha_Salida.setText("");
+                               tF_fecha_Llegada.setText("");
+                               cB_destino.getSelectionModel().clearSelection();
+                               cB_procedencia.getSelectionModel().clearSelection();
+                               tF_plazas_Turista.setText("");
+                               tF_plazas_Primera.setText("");
+                           }else{
+                               MethodsForControllers.showAlert("Error","La fecha de Llegada no puede ser anterior a la fecha de salida", Alert.AlertType.ERROR);
+                           }
                        }else{
                            MethodsForControllers.showAlert("Error","El formato de fecha llegada y salida debe ser 'YYYY-MM-DD HH:MI:SS'", Alert.AlertType.ERROR);
                        }

@@ -6,10 +6,7 @@ import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.List;
@@ -18,7 +15,6 @@ import java.util.ResourceBundle;
 public class ShowVuelosController implements Initializable {
     public Label panelControlDeVuelos;
     public TableView tablaVuelos;
-    public TextField textF_EliminarVueloXCod;
     private List<Vuelo> vuelos;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -36,7 +32,18 @@ public class ShowVuelosController implements Initializable {
         tablaVuelos.getItems().addAll(vuelos);
     }
     public void eliminarVuelos(MouseEvent mouseEvent) {
-    }
+        Vuelo vueloSeleccionado = (Vuelo) tablaVuelos.getSelectionModel().getSelectedItem();
+        if (vueloSeleccionado != null) {
+            if(MethodsForControllers.showAlertConfimation("Confirmación","¿Estas seguro de que quiere eliminar el vuelo?", Alert.AlertType.CONFIRMATION)){
+                VuelosModel.eliminarVuelo(vueloSeleccionado);
+                mostrarVuelos(null);
+                MethodsForControllers.showAlert("Información","El vuelo se ha eliminado de la base de datos", Alert.AlertType.INFORMATION);
+            }else{
+                MethodsForControllers.showAlert("Información","Operación Cancelada", Alert.AlertType.INFORMATION);
+            }
+        } else {
+            MethodsForControllers.showAlert("Error","Por favor, selecciona un vuelo antes de intentar eliminarlo.", Alert.AlertType.ERROR);
+        }    }
     /**
      * rellenarColumnas
      * Este método se utiliza para asignar los valores encontrados en la base de datos a las tablas en inicialize y mostrar datos.

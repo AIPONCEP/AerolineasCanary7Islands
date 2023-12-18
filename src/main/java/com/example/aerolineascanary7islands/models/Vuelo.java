@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Entity
 @Table(name="vuelos")
 public class Vuelo implements Serializable {
@@ -94,5 +98,17 @@ public class Vuelo implements Serializable {
     }
     public void setPlazas_Primera(int plazas_Primera) {
         this.plazas_Primera = plazas_Primera;
+    }
+
+    public static boolean validarFechas(String fecha_Salida, String fecha_Llegada) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date dateSalida = sdf.parse(fecha_Salida);
+            Date dateLlegada = sdf.parse(fecha_Llegada);
+            return dateSalida.before(dateLlegada);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

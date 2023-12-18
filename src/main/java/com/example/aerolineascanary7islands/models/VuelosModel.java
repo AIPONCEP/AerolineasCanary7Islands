@@ -25,6 +25,11 @@ public class VuelosModel {
             manager.close();
         }
     }
+    /**
+     * obtenerTodosLosVuelos
+     * Devuelve una lista con todos los vuelos encontrados en la base de datos.
+     * @return
+     */
     public static List<Vuelo> obtenerTodosLosVuelos() {
         EntityManager manager = managerFactory.createEntityManager();
         try {
@@ -32,5 +37,18 @@ public class VuelosModel {
         } finally {
             manager.close();
         }
+    }
+    /**
+     * eliminarVuelo
+     * busca un vuelo en la base de datos para eliminarlo en funcion de su cod_vuelo
+     * @param v
+     */
+    public static void eliminarVuelo(Vuelo v) {
+        EntityManager manager = managerFactory.createEntityManager();
+        manager.getTransaction().begin();
+        Vuelo vuelo = manager.find(Vuelo.class, v.getCod_Vuelo());
+        manager.remove(vuelo);
+        manager.getTransaction().commit();
+        manager.close();
     }
 }
