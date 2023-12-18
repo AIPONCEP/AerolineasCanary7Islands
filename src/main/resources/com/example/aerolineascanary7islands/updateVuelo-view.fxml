@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="815.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.UpdateVueloController">
    <children>
-      <ImageView fitHeight="843.0" fitWidth="1109.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="843.0" fitWidth="1109.0" layoutX="-3.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Imagenes/avionNegroVolando.jpg" />
          </image>
       </ImageView>
+      <Pane layoutX="148.0" layoutY="174.0" opacity="0.6" prefHeight="381.0" prefWidth="811.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="253.0" layoutY="238.0" text="Precio">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="253.0" layoutY="344.0" text="Fecha Salida">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="253.0" layoutY="453.0" text="Fecha Llegada">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="471.0" layoutY="230.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte el nuevo precio" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="471.0" layoutY="336.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte la nueva fecha de salida" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="471.0" layoutY="445.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte la nueva fecha de llegada" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="340.0" layoutY="38.0" text="Actualizar Vuelo">
+         <font>
+            <Font name="Impact" size="64.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.23333333432674408" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutX="761.0" layoutY="554.0" opacity="0.6" prefHeight="59.0" prefWidth="198.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
+      <Label layoutX="799.0" layoutY="566.0" text="Actualizar">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.23333333432674408" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
