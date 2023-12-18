@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #2cccd4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.myFligthsController">
+   <children>
+      <ImageView fitHeight="388.0" fitWidth="1008.0" layoutX="-1.0" layoutY="318.0">
+         <image>
+            <Image url="@../../../Imagenes/avionVolando.png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="5.0" layoutY="60.0" prefHeight="295.0" prefWidth="990.0">
+         <content>
+            <VBox fx:id="dynamicContainer" alignment="CENTER" prefHeight="22.0" prefWidth="988.0" spacing="20.0" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="labelTitle" layoutX="416.0" layoutY="9.0" text="Mis vuelos">
+         <font>
+            <Font name="Impact" size="40.0" />
+         </font>
+      </Label>
+      <Pane layoutX="14.0" layoutY="646.0" opacity="0.6" prefHeight="45.0" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label layoutX="59.0" layoutY="652.0" prefHeight="34.0" prefWidth="69.0" text="Salir">
+         <font>
+            <Font name="Impact" size="26.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="14.0" layoutY="647.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../../Iconos/flechaRoja.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="13.0" layoutY="645.0" onMouseClicked="#salir" prefHeight="46.0" prefWidth="106.0" />
+   </children>
+</AnchorPane>

@@ -61,7 +61,7 @@ public class PerfilController {
             pane2.setVisible(false);
         }
     }
-    public void atras(){
+    public void salir(){
         cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml","Vuelos", labelTitle);
     }
     public void actualizar(){
@@ -82,5 +82,9 @@ public class PerfilController {
         }else {
                MethodsForControllers.showAlert("ERROR","El campo a actualizar esta vacio", Alert.AlertType.ERROR);
         }
+    }
+
+    public void verVuelos(){
+        cambiarScene("/com/example/aerolineascanary7islands/myFlights-view.fxml", "Mis vuelos", labelTitle);
     }
 }
