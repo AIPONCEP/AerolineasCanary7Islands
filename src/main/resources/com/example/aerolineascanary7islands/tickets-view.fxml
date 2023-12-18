@@ -18,12 +18,12 @@
    <children>
       <ImageView fitHeight="197.0" fitWidth="1013.0" layoutX="-8.0" layoutY="503.0">
          <image>
-            <Image url="@../../../Imagenes/blue-sky-with-white-clouds-background-border-of-clouds-simple-cartoon-design-flat-style-illustration-free-vector-3358013314.jpg" />
+            <Image url="@../../../Imagenes/blue-sky-clouds.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="79.0" fitWidth="78.0" layoutX="29.0" layoutY="17.0">
          <image>
-            <Image url="@../../../Imagenes/imagen-de-usuario-con-fondo-negro.png" />
+            <Image url="@../../../Iconos/imagen-de-usuario-con-fondo-negro.png" />
          </image>
       </ImageView>
       <Pane layoutX="21.0" layoutY="20.0" onMouseClicked="#perfilClick" prefHeight="79.0" prefWidth="96.0" />

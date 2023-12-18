@@ -117,7 +117,6 @@ public class TicketsController {
         if (indice == 0) {
             pane1.setVisible(false);
             pane2.setVisible(true);
-
             indice = 1;
         } else {
             pane1.setVisible(true);
@@ -130,12 +129,17 @@ public class TicketsController {
         paneSelection.setVisible(false);
     }
     public void buscarVuelo(){
-        vuelosLista = findVuelo(comboBoxOrigen.getValue().toString(), comboBoxDestino.getValue().toString(), spinnerIda.getValue().toString(), spinnerVuelta.getValue().toString());
-        if (vuelosLista != null){
-            System.out.println(vuelosLista.get(0).getDestino());
-            cambiarScene("/com/example/aerolineascanary7islands/flightsTickets-view.fxml", "Vuelos disponible", labelTitle);
-        }else {
-            MethodsForControllers.showAlert("ERROR", "No se encontro ningun vuelo", Alert.AlertType.ERROR);
+        if(Vuelo.validarFechas(spinnerIda.getValue().toString(),spinnerVuelta.getValue().toString())){
+            vuelosLista = findVuelo(comboBoxOrigen.getValue().toString(), comboBoxDestino.getValue().toString(), spinnerIda.getValue().toString(), spinnerVuelta.getValue().toString());
+            if (vuelosLista != null){
+                System.out.println(vuelosLista.get(0).getDestino());
+                cambiarScene("/com/example/aerolineascanary7islands/flightsTickets-view.fxml", "Vuelos disponible", labelTitle);
+            }else {
+                MethodsForControllers.showAlert("ERROR", "No se encontro ningun vuelo", Alert.AlertType.ERROR);
+            }
+        }else{
+            MethodsForControllers.showAlert("Error","La fecha de Llegada no puede ser anterior a la fecha de salida", Alert.AlertType.ERROR);
         }
+
     }
 }
