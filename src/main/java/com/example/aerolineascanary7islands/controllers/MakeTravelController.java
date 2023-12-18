@@ -61,7 +61,7 @@ public class MakeTravelController implements Initializable {
                        if(tF_fecha_Llegada.getText().matches(expRegularFecha) && tF_fecha_Salida.getText().matches(expRegularFecha)) {
                            if(Vuelo.validarFechas(tF_fecha_Salida.getText(),tF_fecha_Llegada.getText())){
                                Vuelo vuelo = new Vuelo(tF_cod_Vuelo.getText(), Float.parseFloat(tF_precio.getText()), tF_fecha_Salida.getText(), tF_fecha_Llegada.getText(),
-                                       cB_destino.getValue().toString(), cB_procedencia.getValue().toString(), Integer.parseInt(tF_plazas_Turista.getText()), Integer.parseInt(tF_plazas_Primera.getText()));
+                                       cB_destino.getValue().toString(), cB_procedencia.getValue().toString(), Integer.parseInt(tF_plazas_Turista.getText()), Integer.parseInt(tF_plazas_Primera.getText()),null);
                                ManipulateBd.insert(vuelo);
                                tF_cod_Vuelo.setText("");
                                tF_precio.setText("");
