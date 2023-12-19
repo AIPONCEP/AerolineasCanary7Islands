@@ -119,4 +119,10 @@ public class Vuelo implements Serializable {
     public void addBilletesCompradosVuelosList(BilletesComprados billete){
         this.billetesCompradosList.add(billete);
     }
+    public List<BilletesComprados> getBilletesCompradosList() {
+        return billetesCompradosList;
+    }
+    public void setBilletesCompradosList(List<BilletesComprados> billetesCompradosList) {
+        this.billetesCompradosList = billetesCompradosList;
+    }
 }

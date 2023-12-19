@@ -53,6 +53,17 @@ CREATE TABLE BilletesComprados (
 INSERT INTO Usuarios (Nombre, Contraseña, Mail, Tlf) VALUES ("Ana","123","Canary7IslandAIPonceP@gmail.com",928418775);
 INSERT INTO Administradores (Sueldo) values (2000);
 
+INSERT INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
+VALUES
+    ("GC01", 100, "2023-12-19 10:00:00", "2023-12-19 12:00:00", "Gran Canaria", "Tenerife", 100, 20),
+    ("GC02", 120, "2023-12-20 10:00:00", "2023-12-20 12:00:00", "Gran Canaria", "Lanzarote", 100, 20),
+    ("T01", 130, "2023-12-21 16:00:00", "2023-12-21 18:00:00", "Tenerife","Gran Canaria", 100, 20),
+    ("T02", 180, "2023-12-22 15:00:00", "2023-12-22 17:00:00", "Tenerife","El Hierro", 100, 20),
+    ("LZ01", 100, "2023-12-23 12:00:00", "2023-12-23 14:00:00", "Lanzarote","Gran Canaria", 100, 20),
+    ("LZ02", 200, "2023-12-24 09:00:00", "2023-12-24 11:00:00", "Lanzarote","La Gomera", 100, 20),
+    ("EH01", 130, "2023-12-25 14:00:00", "2023-12-25 16:00:00", "El Hierro","Tenerife", 100, 20),
+    ("EH02", 180, "2023-12-26 09:30:00", "2023-12-26 11:30:00", "El Hierro","Fuerteventura", 100, 20);
+
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
 VALUES ("GC01", 100, "2023-12-20 10:00:00", "2023-12-20 12:00:00", "Gran Canaria", "Tenerife", 100, 20);
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)

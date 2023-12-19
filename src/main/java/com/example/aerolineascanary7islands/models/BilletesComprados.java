@@ -11,11 +11,11 @@ public class BilletesComprados implements Serializable {
     private String Fecha;
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "codVuelo")
+    @JoinColumn(name = "CodVuelo")
     private Vuelo vuelo;
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPasajero")
+    @JoinColumn(name = "IdPasajero")
     private Pasajero  pasajero;
     public BilletesComprados(String fecha, Vuelo vuelo, Pasajero pasajero) {
         Fecha = fecha;

@@ -44,6 +44,12 @@ public class Usuario implements Serializable {
     public void setAdministrador(Administrador administrador) {
         this.administrador = administrador;
     }
+    public Pasajero getPasajero() {
+        return pasajero;
+    }
+    public void setPasajero(Pasajero pasajero) {
+        this.pasajero = pasajero;
+    }
     public int getId() {
         return id;
     }
