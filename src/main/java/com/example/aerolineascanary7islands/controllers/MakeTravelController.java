@@ -32,7 +32,7 @@ public class MakeTravelController implements Initializable {
     public TextField tF_plazas_Primera;
     @FXML
     public Label crearVueloTitle;
-    private String expRegularFecha = "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}";
+    public static String expRegularFecha = "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}";
     /**
      * Se declara initialize para rellenar combos de la vista con los posibles destinos y la procedencia de los vuelos.
      * @param url

@@ -18,38 +18,38 @@
             <Image url="@../../../Imagenes/avionNegroVolando.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="148.0" layoutY="174.0" opacity="0.6" prefHeight="381.0" prefWidth="811.0" style="-fx-background-color: white; -fx-border-color: black;" />
-      <Label layoutX="253.0" layoutY="238.0" text="Precio">
+      <Pane layoutX="148.0" layoutY="169.0" opacity="0.6" prefHeight="381.0" prefWidth="811.0" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Label layoutX="235.0" layoutY="238.0" text="Precio">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="253.0" layoutY="344.0" text="Fecha Salida">
+      <Label layoutX="235.0" layoutY="344.0" text="Fecha Salida">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="253.0" layoutY="453.0" text="Fecha Llegada">
+      <Label layoutX="235.0" layoutY="453.0" text="Fecha Llegada">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="471.0" layoutY="230.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte el nuevo precio" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
+      <TextField fx:id="textPrecio" layoutX="453.0" layoutY="230.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte el nuevo precio" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
          <font>
-            <Font name="Calibri" size="24.0" />
+            <Font name="Calibri" size="18.0" />
          </font>
       </TextField>
-      <TextField layoutX="471.0" layoutY="336.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte la nueva fecha de salida" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
+      <TextField fx:id="textFechaSalida" layoutX="453.0" layoutY="336.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte la nueva fecha de salida" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
          <font>
-            <Font name="Calibri" size="24.0" />
+            <Font name="Calibri" size="18.0" />
          </font>
       </TextField>
-      <TextField layoutX="471.0" layoutY="445.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte la nueva fecha de llegada" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
+      <TextField fx:id="textFechaLlegada" layoutX="453.0" layoutY="445.0" prefHeight="46.0" prefWidth="428.0" promptText="Inserte la nueva fecha de llegada" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: black;">
          <font>
-            <Font name="Calibri" size="24.0" />
+            <Font name="Calibri" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="340.0" layoutY="38.0" text="Actualizar Vuelo">
+      <Label fx:id="actualizarTitle" layoutX="340.0" layoutY="38.0" text="Actualizar Vuelo">
          <font>
             <Font name="Impact" size="64.0" />
          </font>
@@ -70,8 +70,30 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="799.0" layoutY="554.0" opacity="0.6" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
-      <Label layoutX="819.0" layoutY="559.0" text="Actualizar">
+      <Pane layoutX="799.0" layoutY="549.0" onMouseClicked="#actualizar" opacity="0.6" prefHeight="49.0" prefWidth="160.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
+      <Label layoutX="819.0" layoutY="554.0" onMouseClicked="#actualizar" text="Actualizar">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.23333333432674408" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Pane layoutX="37.0" layoutY="745.0" onMouseClicked="#volver" opacity="0.6" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
+      <Label layoutX="113.0" layoutY="748.0" onMouseClicked="#volver" text="Volver">
          <font>
             <Font name="Impact" size="30.0" />
          </font>
@@ -92,29 +114,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="37.0" layoutY="745.0" opacity="0.6" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: lightgrey; -fx-border-color: black;" />
-      <Label layoutX="113.0" layoutY="748.0" text="Volver">
-         <font>
-            <Font name="Impact" size="30.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color green="0.23333333432674408" blue="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-      <ImageView fitHeight="102.0" fitWidth="49.0" layoutX="47.0" layoutY="743.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+      <ImageView fitHeight="102.0" fitWidth="49.0" layoutX="47.0" layoutY="743.0" onMouseClicked="#volver" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
          <image>
             <Image url="@../../../Iconos/flechaRoja.png" />
          </image>

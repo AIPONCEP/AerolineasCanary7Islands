@@ -51,4 +51,13 @@ public class VuelosModel {
         manager.getTransaction().commit();
         manager.close();
     }
+
+    public static void updateVuelo(Vuelo v){
+        EntityManager manager = managerFactory.createEntityManager();
+        manager.getTransaction().begin();
+        Vuelo vuelo = manager.find(Vuelo.class, v.getCod_Vuelo());
+        manager.merge(v);
+        manager.getTransaction().commit();
+        manager.close();
+    }
 }
