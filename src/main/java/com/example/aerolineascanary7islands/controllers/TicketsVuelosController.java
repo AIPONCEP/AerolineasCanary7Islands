@@ -18,6 +18,8 @@ import static com.example.aerolineascanary7islands.controllers.LoginController.a
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.controllers.TicketsController.vuelosLista;
 import static com.example.aerolineascanary7islands.models.ManipulateBd.insert;
+import static com.example.aerolineascanary7islands.models.TicketsModel.existePasajeroParaUsuario;
+
 /**
  * Controlador para la vista de selección de vuelos y reserva de billetes.
  */
@@ -71,8 +73,7 @@ public class TicketsVuelosController {
      */
     public void confirmar(){
         RadioButton selectedRadioButton = (RadioButton) tipoAsiento.getSelectedToggle();
-        Pasajero pasajero = new Pasajero(selectedRadioButton.getText(), atributoUsuario, null);
-        pasajero.setId_Pasajero(atributoUsuario.getId());
+        Pasajero pasajero = new Pasajero(atributoUsuario.getId(),selectedRadioButton.getText(), atributoUsuario, null);
         for (Vuelo vuelo : vuelosLista) {
             System.out.println(codigoVueloSeleccionado);
             if (vuelo.getCod_Vuelo().equals(codigoVueloSeleccionado)) {
@@ -85,8 +86,10 @@ public class TicketsVuelosController {
             LocalDateTime fechaHora = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String fechaFormateada = fechaHora.format(formatter);
-            BilleteComprado billete = new BilleteComprado(fechaFormateada,vueloSeleccionado.getCod_Vuelo(), pasajero.getId_Pasajero(),null,null);
-            insert(pasajero);
+            BilleteComprado billete = new BilleteComprado(fechaFormateada, vueloSeleccionado,pasajero );
+            if(!existePasajeroParaUsuario(pasajero.getUsuario().getId())){
+                insert(pasajero);
+            }
             insert(billete);
         } else {
             System.out.println("El vuelo seleccionado no fue encontrado en la lista de vuelos.");

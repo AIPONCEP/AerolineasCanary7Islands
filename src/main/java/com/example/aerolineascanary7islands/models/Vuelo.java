@@ -27,7 +27,7 @@ public class Vuelo implements Serializable {
     private int plazas_Turista;
     @Column(name = "Plazas_Primera")
     private int plazas_Primera;
-    @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<BilleteComprado> billetesCompradosList;
     public Vuelo() {
         this.cod_Vuelo = "";
@@ -56,7 +56,7 @@ public class Vuelo implements Serializable {
     public String getCod_Vuelo() {
         return cod_Vuelo;
     }
-    public void setCod_Vuelo(String cod_Vuelo) {
+    public void setCodh_Vuelo(String cod_Vuelo) {
         this.cod_Vuelo = cod_Vuelo;
     }
     public float getPrecio() {

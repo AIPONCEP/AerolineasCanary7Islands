@@ -20,7 +20,7 @@ public class Usuario implements Serializable {
     private int tlf;
     @OneToOne(mappedBy = "usuario")
     private Administrador administrador;
-    @OneToOne(mappedBy = "usuario")
+    @OneToOne(mappedBy = "usuario", fetch = FetchType.EAGER)
     private Pasajero pasajero;
     public Usuario() {
         this.id = 0;

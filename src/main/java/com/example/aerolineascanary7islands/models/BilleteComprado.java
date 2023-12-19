@@ -10,31 +10,21 @@ public class BilleteComprado implements Serializable {
     @Column(name = "Fecha")
     private String fecha;
     @Id
-    @Column(name = "CodVuelo")
-    private String codVuelo;
-    @Id
-    @Column(name = "IdPasajero")
-    private int idPasajero;
-    @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "CodVuelo")
     private Vuelo vuelo;
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "IdPasajero")
-    private Pasajero  pasajero;
+    private Pasajero pasajero;
 
-    public BilleteComprado(String fecha, String codVuelo, int idPasajero, Vuelo vuelo, Pasajero pasajero) {
+    public BilleteComprado(String fecha, Vuelo vuelo, Pasajero pasajero) {
         this.fecha = fecha;
-        this.codVuelo = codVuelo;
-        this.idPasajero = idPasajero;
         this.vuelo = vuelo;
         this.pasajero = pasajero;
     }
     public BilleteComprado() {
-        fecha = null;
-        this.codVuelo = null;
-        this.idPasajero = 0;
+        this.fecha = null;
         this.vuelo = null;
         this.pasajero = null;
     }
@@ -42,19 +32,7 @@ public class BilleteComprado implements Serializable {
         return fecha;
     }
     public void setFecha(String fecha) {
-        fecha = fecha;
-    }
-    public String getCodVuelo() {
-        return codVuelo;
-    }
-    public void setCodVuelo(String codVuelo) {
-        this.codVuelo = codVuelo;
-    }
-    public int getIdPasajero() {
-        return idPasajero;
-    }
-    public void setIdPasajero(int idPasajero) {
-        this.idPasajero = idPasajero;
+        this.fecha = fecha;
     }
     public Vuelo getVuelo() {
         return vuelo;

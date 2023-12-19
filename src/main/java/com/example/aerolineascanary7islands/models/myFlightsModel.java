@@ -15,8 +15,8 @@ public class myFlightsModel {
             TypedQuery<Vuelo> query = manager.createQuery(
                     "SELECT v FROM Vuelo v " +
                             "JOIN BilleteComprado bc ON v.cod_Vuelo = bc.vuelo.cod_Vuelo " +
-                            "JOIN Pasajero p ON bc.pasajero.Id_Pasajero = p.Id_Pasajero " +
-                            "JOIN Usuario u ON p.Id_Pasajero = u.id " +
+                            "JOIN Pasajero p ON bc.pasajero.usuario.id = p.usuario.id " +
+                            "JOIN Usuario u ON  p.usuario.id = u.id " +
                             "WHERE u.id = :idUsuario", Vuelo.class);
             query.setParameter("idUsuario", idUsuario);
 
@@ -33,21 +33,35 @@ public class myFlightsModel {
         }
         return null;
     }
-    public static void eliminarBillete(BilleteComprado b) {
-   /*     EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
-        manager.getTransaction().begin();
-        // Obtener el BilleteComprado por su código de vuelo
-        BilleteComprado billete = manager.find(BilleteComprado.class,b);
-        manager.remove(billete);
-        manager.getTransaction().commit();
-        manager.close();
-    */
-        EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
-        manager.getTransaction().begin();
-        // Usar merge para asociar la instancia con la sesión de Hibernate
-        BilleteComprado billete = manager.merge(b);
-        manager.remove(billete);
-        manager.getTransaction().commit();
-        manager.close();
+    public static void eliminarBillete(int IdPasajero, String codVuelo) {
+        EntityManager manager = null;
+        try {
+            manager = managerFactory.createEntityManager();
+            // Aquí cambia la consulta para seleccionar el billete comprado por el pasajero específico
+            TypedQuery<BilleteComprado> query = manager.createQuery(
+                    "SELECT bc FROM BilleteComprado bc " +
+                            "WHERE bc.pasajero.usuario.id = :IdPasajero AND bc.vuelo.id = :CodVuelo" , BilleteComprado.class);
+
+            query.setParameter("IdPasajero", IdPasajero);
+            query.setParameter("CodVuelo", codVuelo);
+
+            List<BilleteComprado> resultList = query.getResultList();
+            if (!resultList.isEmpty()) {
+                manager.getTransaction().begin();
+                BilleteComprado billete = resultList.get(0);
+                manager.remove(billete);
+                manager.getTransaction().commit();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (manager != null && manager.getTransaction().isActive()) {
+                manager.getTransaction().rollback();
+            }
+        } finally {
+            if (manager != null && manager.isOpen()) {
+                manager.close();
+            }
+        }
     }
+
 }

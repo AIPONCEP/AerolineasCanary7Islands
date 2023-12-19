@@ -48,4 +48,28 @@ public class TicketsModel {
         }
         return null;
     }
+    public static boolean existePasajeroParaUsuario(int idUsuario) {
+        EntityManager manager = null;
+        try {
+            manager = managerFactory.createEntityManager();
+            TypedQuery<Pasajero> query = manager.createQuery(
+                    "SELECT p FROM Pasajero p JOIN p.usuario u WHERE u.id = :idUsuario",
+                    Pasajero.class);
+            query.setParameter("idUsuario", idUsuario);
+
+            List<Pasajero> pasajeros = query.getResultList();
+            if(!pasajeros.isEmpty()){
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Manejar la excepción según sea necesario
+        } finally {
+            if (manager != null && manager.isOpen()) {
+                manager.close();
+            }
+        }
+        return false;
+    }
 }

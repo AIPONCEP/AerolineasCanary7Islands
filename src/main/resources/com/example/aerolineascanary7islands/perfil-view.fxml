@@ -74,7 +74,7 @@
             </Label>
          </children>
       </VBox>
-      <Pane fx:id="pane2" layoutX="294.0" layoutY="382.0" prefHeight="126.0" prefWidth="491.0">
+      <Pane fx:id="pane2" layoutX="267.0" layoutY="382.0" prefHeight="126.0" prefWidth="518.0">
          <children>
             <Label layoutX="188.0" layoutY="96.0" onMouseClicked="#confirmar" prefHeight="33.0" prefWidth="115.0" style="4: grey;" text="Confirmar">
                <font>
@@ -102,13 +102,13 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <ComboBox fx:id="comboBoxFields" layoutX="156.0" layoutY="-3.0" prefHeight="34.0" prefWidth="179.0" style="-fx-font-size: 18; -fx-font-family: &quot;Calibri&quot;;" />
-            <TextField fx:id="textFieldUpdate" layoutX="180.0" layoutY="46.0" prefHeight="34.0" prefWidth="308.0">
+            <ComboBox fx:id="comboBoxFields" layoutX="170.0" layoutY="-3.0" prefHeight="34.0" prefWidth="179.0" style="-fx-font-size: 18; -fx-font-family: &quot;Calibri&quot;;" />
+            <TextField fx:id="textFieldUpdate" layoutX="210.0" layoutY="46.0" prefHeight="35.0" prefWidth="278.0">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
             </TextField>
-            <Label fx:id="labelNew" layoutX="23.0" layoutY="50.0" prefHeight="27.0" prefWidth="154.0" text="Nuevo dato:">
+            <Label fx:id="labelNew" layoutX="-4.0" layoutY="50.0" prefHeight="27.0" prefWidth="214.0" text="Nuevo dato:">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>

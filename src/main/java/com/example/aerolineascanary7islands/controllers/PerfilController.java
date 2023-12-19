@@ -93,17 +93,28 @@ public class PerfilController {
     /**
      * Confirma la actualización de los datos del usuario.
      */
+    /**
+     * Confirma la actualización de los datos del usuario.
+     */
     public void confirmar() {
         if (!textFieldUpdate.getText().isEmpty()) {
-            if (updateUser(atributoUsuario, selectedValue, textFieldUpdate.getText())) {
-                cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml", "perfil", labelTitle);
-            } else {
+            try {
+                if (updateUser(atributoUsuario, selectedValue, textFieldUpdate.getText())) {
+                    cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml", "perfil", labelTitle);
+                } else {
+                    // Muestra un mensaje si la actualización no se realiza correctamente
+                    MethodsForControllers.showAlert("ERROR", "La actualización ha fallado", Alert.AlertType.ERROR);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
                 MethodsForControllers.showAlert("ERROR", "Ese valor no es válido para el campo " + selectedValue, Alert.AlertType.ERROR);
             }
+
         } else {
             MethodsForControllers.showAlert("ERROR", "El campo a actualizar está vacío", Alert.AlertType.ERROR);
         }
     }
+
 
     /**
      * Muestra los vuelos del usuario.

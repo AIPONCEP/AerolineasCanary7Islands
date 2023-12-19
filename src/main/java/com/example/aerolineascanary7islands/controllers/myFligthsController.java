@@ -1,7 +1,10 @@
 package com.example.aerolineascanary7islands.controllers;
 
+import com.example.aerolineascanary7islands.models.BilleteComprado;
+import com.example.aerolineascanary7islands.models.Pasajero;
 import com.example.aerolineascanary7islands.models.Vuelo;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -10,8 +13,11 @@ import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.aerolineascanary7islands.controllers.LoginController.atributoUsuario;
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.controllers.PerfilController.vuelosListaPerfil;
+import static com.example.aerolineascanary7islands.models.myFlightsModel.eliminarBillete;
 
 /**
  * myFligthsController
@@ -53,9 +59,31 @@ public class myFligthsController {
             button.setId(vuelosListaPerfil.get(i).getCod_Vuelo());
             button.setOnAction(event -> {
                 codigoVueloSeleccionado = ((Button) event.getSource()).getId();
-                System.out.println(codigoVueloSeleccionado);
+                eliminarBilleteController();
+
             });
         }
+    }
+
+    public void eliminarBilleteController(){
+        /*Vuelo vuelo = new Vuelo(codigoVueloSeleccionado, 0F,null, null, null, null, 0, 0, null);
+        Pasajero pasajero = new Pasajero(atributoUsuario.getId(), null, null, null);
+        BilleteComprado billeteParaEliminar = new BilleteComprado(null, vuelo, pasajero);
+         */
+        System.out.println(codigoVueloSeleccionado + " " + atributoUsuario.getId());
+        try {
+            // Intenta eliminar el billete
+
+            eliminarBillete(atributoUsuario.getId(), codigoVueloSeleccionado);
+        } catch (Exception e) {
+            // Manejo de la excepción en caso de error al eliminar
+            MethodsForControllers.showAlert("ERROR", "La eliminacion ha fallado", Alert.AlertType.ERROR);
+
+            e.printStackTrace(); // Aquí puedes imprimir el error o manejarlo de otra manera
+        }
+        cambiarScene("/com/example/aerolineascanary7islands/myFlights-view.fxml", "mis vuelos", labelTitle);
+
+
     }
     /**
      * salir
