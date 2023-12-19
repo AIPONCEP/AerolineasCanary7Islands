@@ -11,7 +11,6 @@ public class myFlightsModel {
         EntityManager manager = null;
         try {
             manager = managerFactory.createEntityManager();
-
             // Cambia la consulta para seleccionar los vuelos comprados por el usuario específico
             TypedQuery<Vuelo> query = manager.createQuery(
                     "SELECT v FROM Vuelo v " +
@@ -42,7 +41,6 @@ public class myFlightsModel {
         manager.remove(billete);
         manager.getTransaction().commit();
         manager.close();
-
     */
         EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
         manager.getTransaction().begin();
@@ -51,7 +49,5 @@ public class myFlightsModel {
         manager.remove(billete);
         manager.getTransaction().commit();
         manager.close();
-
     }
-
 }

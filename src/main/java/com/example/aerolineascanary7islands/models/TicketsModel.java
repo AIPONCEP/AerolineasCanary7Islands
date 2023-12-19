@@ -13,8 +13,7 @@ import static com.example.aerolineascanary7islands.models.RegisterLoginModel.man
 public class TicketsModel {
     /**
      * findVuelo
-     * Busca vuelos en la base de datos según la procedencia, destino y un rango de fechas.
-     *
+     * Busca vuelos en la base de datos según la procedencia, destino y un rango de fechas.     *
      * @param procedencia    La ubicación de origen del vuelo.
      * @param destino        La ubicación de destino del vuelo.
      * @param fechaInicial   La fecha inicial del rango de búsqueda.

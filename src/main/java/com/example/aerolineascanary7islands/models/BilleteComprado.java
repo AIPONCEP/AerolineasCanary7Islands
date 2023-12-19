@@ -38,43 +38,33 @@ public class BilleteComprado implements Serializable {
         this.vuelo = null;
         this.pasajero = null;
     }
-
     public String getFecha() {
         return fecha;
     }
-
     public void setFecha(String fecha) {
         fecha = fecha;
     }
-
     public String getCodVuelo() {
         return codVuelo;
     }
-
     public void setCodVuelo(String codVuelo) {
         this.codVuelo = codVuelo;
     }
-
     public int getIdPasajero() {
         return idPasajero;
     }
-
     public void setIdPasajero(int idPasajero) {
         this.idPasajero = idPasajero;
     }
-
     public Vuelo getVuelo() {
         return vuelo;
     }
-
     public void setVuelo(Vuelo vuelo) {
         this.vuelo = vuelo;
     }
-
     public Pasajero getPasajero() {
         return pasajero;
     }
-
     public void setPasajero(Pasajero pasajero) {
         this.pasajero = pasajero;
     }

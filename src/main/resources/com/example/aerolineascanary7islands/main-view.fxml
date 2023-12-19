@@ -43,7 +43,7 @@
       <Pane layoutX="799.0" layoutY="14.0" opacity="0.25" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: WHITE; -fx-border-color: GREY;" />
       <Label layoutX="812.0" layoutY="13.0" prefHeight="41.0" prefWidth="157.0" text="Iniciar Sesión">
          <font>
-            <Font name="Calibri" size="24.0" />
+            <Font name="Impact" size="24.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">

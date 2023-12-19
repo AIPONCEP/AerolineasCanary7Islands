@@ -2,7 +2,6 @@ package com.example.aerolineascanary7islands.models;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
 @Entity
 @Table(name = "pasajeros")
 public class Pasajero {
@@ -27,7 +26,6 @@ public class Pasajero {
         this.usuario = null;
         this.billetesCompradosList = new ArrayList<>();
     }
-
     public int getId_Pasajero() {
         return Id_Pasajero;
     }

@@ -15,18 +15,18 @@
 
 <AnchorPane prefHeight="434.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.PerfilController">
    <children>
-      <ImageView fitHeight="700.0" fitWidth="1000.0">
+      <ImageView fitHeight="750.0" fitWidth="1100.0">
          <image>
             <Image url="@../../../Imagenes/ventanas.png" />
          </image>
       </ImageView>
-      <Pane layoutX="232.0" layoutY="176.0" opacity="0.6" prefHeight="326.0" prefWidth="536.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Pane layoutX="218.0" layoutY="177.0" opacity="0.6" prefHeight="356.0" prefWidth="644.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label fx:id="labelTitle" layoutX="159.0" layoutY="14.0">
          <font>
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <VBox alignment="CENTER" layoutX="309.0" layoutY="177.0" prefHeight="196.0" prefWidth="100.0" spacing="15.0">
+      <VBox alignment="CENTER" layoutX="264.0" layoutY="176.0" prefHeight="179.0" prefWidth="222.0" spacing="15.0">
          <children>
             <Label text="Nombre:">
                <font>
@@ -50,40 +50,33 @@
             </Label>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="555.0" layoutY="177.0" prefHeight="200.0" prefWidth="174.0" spacing="15.0">
+      <VBox alignment="CENTER" layoutX="508.0" layoutY="176.0" prefHeight="179.0" prefWidth="339.0" spacing="15.0">
          <children>
-            <Label fx:id="labelNombre" alignment="CENTER" prefHeight="26.0" prefWidth="183.0" text="Nombre">
+            <Label fx:id="labelNombre" alignment="CENTER" prefHeight="26.0" prefWidth="336.0" text="Nombre">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="labelContraseña" alignment="CENTER" prefHeight="26.0" prefWidth="229.0" text="Nombre">
+            <Label fx:id="labelContraseña" alignment="CENTER" prefHeight="26.0" prefWidth="341.0" text="Nombre">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="labelMail" alignment="CENTER" prefHeight="26.0" prefWidth="267.0" text="Nombre">
+            <Label fx:id="labelMail" alignment="CENTER" prefHeight="26.0" prefWidth="337.0" text="Nombre">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="labelTelefono" alignment="CENTER" prefHeight="27.0" prefWidth="180.0" text="Nombre">
+            <Label fx:id="labelTelefono" alignment="CENTER" prefHeight="27.0" prefWidth="345.0" text="Nombre">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <Pane fx:id="pane2" layoutX="321.0" layoutY="364.0" prefHeight="101.0" prefWidth="358.0">
+      <Pane fx:id="pane2" layoutX="294.0" layoutY="382.0" prefHeight="126.0" prefWidth="491.0">
          <children>
-            <ComboBox fx:id="comboBoxFields" layoutX="95.0" layoutY="2.0" prefWidth="150.0" />
-            <Label fx:id="labelNew" layoutX="14.0" layoutY="39.0" prefHeight="27.0" prefWidth="174.0" text="Nuevo dato:">
-               <font>
-                  <Font name="Calibri" size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="textFieldUpdate" layoutX="192.0" layoutY="40.0" />
-            <Label layoutX="123.0" layoutY="75.0" onMouseClicked="#confirmar" prefHeight="33.0" prefWidth="115.0" style="4: grey;" text="Confirmar">
+            <Label layoutX="188.0" layoutY="96.0" onMouseClicked="#confirmar" prefHeight="33.0" prefWidth="115.0" style="4: grey;" text="Confirmar">
                <font>
                   <Font name="Impact" size="26.0" />
                </font>
@@ -109,12 +102,23 @@
                   </LinearGradient>
                </textFill>
             </Label>
+            <ComboBox fx:id="comboBoxFields" layoutX="156.0" layoutY="-3.0" prefHeight="34.0" prefWidth="179.0" style="-fx-font-size: 18; -fx-font-family: &quot;Calibri&quot;;" />
+            <TextField fx:id="textFieldUpdate" layoutX="180.0" layoutY="46.0" prefHeight="34.0" prefWidth="308.0">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </TextField>
+            <Label fx:id="labelNew" layoutX="23.0" layoutY="50.0" prefHeight="27.0" prefWidth="154.0" text="Nuevo dato:">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Pane layoutX="25.0" layoutY="633.0" opacity="0.6" prefHeight="45.0" prefWidth="105.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="70.0" layoutY="639.0" prefHeight="34.0" prefWidth="69.0" text="Salir">
+      <Pane layoutX="33.0" layoutY="681.0" opacity="0.6" prefHeight="45.0" prefWidth="115.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label layoutX="82.0" layoutY="684.0" prefHeight="34.0" prefWidth="69.0" text="Salir">
          <font>
-            <Font name="Impact" size="26.0" />
+            <Font name="Impact" size="30.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -138,21 +142,21 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="25.0" layoutY="634.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="33.0" layoutY="682.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../../../Iconos/flechaRoja.png" />
          </image>
       </ImageView>
-      <Pane layoutX="25.0" layoutY="633.0" onMouseClicked="#salir" prefHeight="46.0" prefWidth="106.0" />
-      <Pane layoutX="808.0" layoutY="633.0" opacity="0.6" prefHeight="46.0" prefWidth="167.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="931.0" layoutY="634.0" pickOnBounds="true" preserveRatio="true">
+      <Pane layoutX="33.0" layoutY="682.0" onMouseClicked="#salir" prefHeight="46.0" prefWidth="115.0" />
+      <Pane layoutX="873.0" layoutY="680.0" opacity="0.6" prefHeight="46.0" prefWidth="204.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <ImageView fitHeight="45.0" fitWidth="49.0" layoutX="1033.0" layoutY="681.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Iconos/flechaRoja.png" />
          </image>
       </ImageView>
-      <Label layoutX="815.0" layoutY="639.0" prefHeight="34.0" prefWidth="115.0" text="Mis vuelos">
+      <Label layoutX="886.0" layoutY="683.0" prefHeight="38.0" prefWidth="138.0" text="Mis vuelos">
          <font>
-            <Font name="Impact" size="26.0" />
+            <Font name="Impact" size="30.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -176,11 +180,11 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="808.0" layoutY="633.0" onMouseClicked="#verVuelos" prefHeight="46.0" prefWidth="167.0" />
-      <Pane layoutX="395.0" layoutY="634.0" opacity="0.6" prefHeight="46.0" prefWidth="186.0" style="-fx-background-color: white; -fx-border-color: grey;" />
-      <Label layoutX="402.0" layoutY="640.0" prefHeight="34.0" prefWidth="174.0" text="Actualizar datos">
+      <Pane layoutX="873.0" layoutY="681.0" onMouseClicked="#verVuelos" prefHeight="46.0" prefWidth="204.0" />
+      <Pane layoutX="434.0" layoutY="681.0" opacity="0.6" prefHeight="46.0" prefWidth="213.0" style="-fx-background-color: white; -fx-border-color: grey;" />
+      <Label layoutX="442.0" layoutY="683.0" prefHeight="38.0" prefWidth="204.0" text="Actualizar datos">
          <font>
-            <Font name="Impact" size="26.0" />
+            <Font name="Impact" size="30.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -204,8 +208,8 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Pane layoutX="393.0" layoutY="634.0" onMouseClicked="#actualizar" prefHeight="46.0" prefWidth="193.0" />
-      <Label fx:id="loginTitle" layoutX="215.0" layoutY="40.0" text="Informacion personal">
+      <Pane layoutX="433.0" layoutY="680.0" onMouseClicked="#actualizar" prefHeight="46.0" prefWidth="213.0" />
+      <Label fx:id="loginTitle" layoutX="255.0" layoutY="46.0" text="Informacion personal">
          <font>
             <Font name="Impact" size="64.0" />
          </font>

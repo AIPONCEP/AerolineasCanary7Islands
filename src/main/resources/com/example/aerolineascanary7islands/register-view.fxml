@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Shadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="707.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.RegisterController">
+<AnchorPane prefHeight="707.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aerolineascanary7islands.controllers.RegisterController">
    <children>
       <ImageView fitHeight="782.0" fitWidth="1076.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -43,7 +37,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.6030701994895935" green="0.6734283566474915" blue="0.9868420958518982" />
+                        <Color red="0.03333333507180214" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -86,14 +80,46 @@
       <Pane layoutX="35.0" layoutY="681.0" onMouseClicked="#exitClick" opacity="0.6" prefHeight="59.0" prefWidth="239.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label layoutX="115.0" layoutY="693.0" onMouseClicked="#exitClick" text="Volver Atrás">
          <font>
-            <Font name="Calibri" size="30.0" />
+            <Font name="Impact" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03333333507180214" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <Pane layoutX="853.0" layoutY="681.0" onMouseClicked="#send" opacity="0.6" prefHeight="59.0" prefWidth="187.0" style="-fx-background-color: white; -fx-border-color: grey;" />
       <Label layoutX="872.0" layoutY="693.0" onMouseClicked="#send" text="Enviar">
          <font>
-            <Font name="Calibri" size="30.0" />
+            <Font name="Impact" size="30.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.03333333507180214" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="969.0" layoutY="681.0" onMouseClicked="#send" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -128,7 +128,7 @@
             </LinearGradient>
          </textFill>
         </Label>
-        <TableView fx:id="tablaVuelos" layoutX="63.0" layoutY="159.0" opacity="0.8" prefHeight="405.0" prefWidth="1005.0" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: grey;">
+        <TableView fx:id="tablaVuelos" layoutX="63.0" layoutY="159.0" opacity="0.8" prefHeight="405.0" prefWidth="1005.0" style="-fx-background-color: white; -fx-border-color: black; -fx-text-fill: grey; -fx-font-family: &quot;Calibri&quot;;">
          <columns>
             <TableColumn id="col_Cod_Vuelo" prefWidth="108.0" reorderable="false" resizable="false" text="Cod_Vuelo" />
             <TableColumn id="col_Precio" prefWidth="111.0" reorderable="false" resizable="false" text="Precio" />

@@ -8,8 +8,7 @@ import static com.example.aerolineascanary7islands.models.ManipulateBd.updateBd;
 public class PerfilModel {
     /**
      * updateUser
-     * Actualiza los datos del usuario según el campo especificado.
-     *
+     * Actualiza los datos del usuario según el campo especificado.     *
      * @param usuario  El objeto Usuario a actualizar.
      * @param campo    El campo del usuario a modificar (Nombre, Contraseña, Mail, Telefono).
      * @param newText  El nuevo texto o valor a asignar al campo.
