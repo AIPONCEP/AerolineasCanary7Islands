@@ -5,10 +5,19 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "BilletesComprados")
-public class BilletesComprados implements Serializable {
+public class BilleteComprado implements Serializable {
     @Id
     @Column(name = "Fecha")
     private String Fecha;
+
+    @Id
+    @Column(name = "CodVuelo")
+    private String codVuelo;
+    @Id
+    @Column(name = "IdPasajero")
+    private int idPasajero;
+
+
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "CodVuelo")
@@ -17,13 +26,18 @@ public class BilletesComprados implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "IdPasajero")
     private Pasajero  pasajero;
-    public BilletesComprados(String fecha, Vuelo vuelo, Pasajero pasajero) {
+
+    public BilleteComprado(String fecha, String codVuelo, int idPasajero, Vuelo vuelo, Pasajero pasajero) {
         Fecha = fecha;
+        this.codVuelo = codVuelo;
+        this.idPasajero = idPasajero;
         this.vuelo = vuelo;
         this.pasajero = pasajero;
     }
-    public BilletesComprados() {
+    public BilleteComprado() {
         Fecha = null;
+        this.codVuelo = null;
+        this.idPasajero = 0;
         this.vuelo = null;
         this.pasajero = null;
     }
@@ -34,6 +48,22 @@ public class BilletesComprados implements Serializable {
 
     public void setFecha(String fecha) {
         Fecha = fecha;
+    }
+
+    public String getCodVuelo() {
+        return codVuelo;
+    }
+
+    public void setCodVuelo(String codVuelo) {
+        this.codVuelo = codVuelo;
+    }
+
+    public int getIdPasajero() {
+        return idPasajero;
+    }
+
+    public void setIdPasajero(int idPasajero) {
+        this.idPasajero = idPasajero;
     }
 
     public Vuelo getVuelo() {

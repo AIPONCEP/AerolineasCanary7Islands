@@ -53,6 +53,10 @@ CREATE TABLE BilletesComprados (
 INSERT INTO Usuarios (Nombre, Contraseña, Mail, Tlf) VALUES ("Ana","123","Canary7IslandAIPonceP@gmail.com",928418775);
 INSERT INTO Administradores (Id_Admin,Sueldo) values (1,2000);
 
+INSERT INTO BilletesComprados (Fecha, CodVuelo, IdPasajero) VALUES
+("2023-12-19 08:30:00", "GC01", 1),
+("2023-12-20 08:45:00", "GC02", 1);
+
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
 VALUES ("GC01", 100, "2023-12-20 10:00:00", "2023-12-20 12:00:00", "Gran Canaria", "Tenerife", 100, 20);
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)

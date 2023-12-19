@@ -15,9 +15,9 @@ public class Pasajero {
     @JoinColumn(name = "Id_Pasajero")
     private Usuario usuario;
     @OneToMany(mappedBy = "pasajero", cascade = CascadeType.ALL)
-    private List<BilletesComprados> billetesCompradosList;
+    private List<BilleteComprado> billetesCompradosList;
 
-    public Pasajero( String tipo_plaza, Usuario usuario, List<BilletesComprados> billetesCompradosList) {
+    public Pasajero( String tipo_plaza, Usuario usuario, List<BilleteComprado> billetesCompradosList) {
         Tipo_plaza = tipo_plaza;
         this.usuario = usuario;
         this.billetesCompradosList = billetesCompradosList;
@@ -46,13 +46,13 @@ public class Pasajero {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    public List<BilletesComprados> getBilletesCompradosList() {
+    public List<BilleteComprado> getBilletesCompradosList() {
         return billetesCompradosList;
     }
-    public void setBilletesCompradosList(List<BilletesComprados> billetesCompradosList) {
+    public void setBilletesCompradosList(List<BilleteComprado> billetesCompradosList) {
         this.billetesCompradosList = billetesCompradosList;
     }
-    public void addBilletesCompradosPasajerosList(BilletesComprados billete){
+    public void addBilletesCompradosPasajerosList(BilleteComprado billete){
         this.billetesCompradosList.add(billete);
     }
 }
