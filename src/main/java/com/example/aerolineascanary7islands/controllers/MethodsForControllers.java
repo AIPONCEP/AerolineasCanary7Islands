@@ -11,6 +11,14 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class MethodsForControllers {
+    /**
+     * cambiarScene
+     * Cambia la escena actual por una nueva según la ruta proporcionada.
+     *
+     * @param ruta        La ruta de la nueva escena.
+     * @param title       El título de la nueva ventana.
+     * @param labeltitle  La etiqueta del título de la escena actual.
+     */
     public static void cambiarScene(String ruta, String title, Label labeltitle){
         Scene scene = null;
         try {
@@ -23,6 +31,14 @@ public class MethodsForControllers {
             e.printStackTrace();
         }
     }
+    /**
+     * showAlert
+     * Muestra una alerta con el título, mensaje y tipo de alerta especificados.
+     *
+     * @param title       El título de la alerta.
+     * @param message     El mensaje a mostrar.
+     * @param alertType   El tipo de alerta (ERROR, INFORMATION, CONFIRMATION, etc.).
+     */
     public static void showAlert(String title, String message, javafx.scene.control.Alert.AlertType alertType) {
         javafx.scene.control.Alert alert = new javafx.scene.control.Alert(alertType);
         alert.setTitle(title);

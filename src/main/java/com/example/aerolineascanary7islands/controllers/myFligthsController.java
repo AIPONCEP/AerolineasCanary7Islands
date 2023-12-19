@@ -46,8 +46,8 @@ public class myFligthsController {
 
             button.setId(vuelosListaPerfil.get(i).getCod_Vuelo());
             button.setOnAction(event -> {
-                paneAsiento.setVisible(true);
                 codigoVueloSeleccionado = ((Button) event.getSource()).getId();
+                System.out.println(codigoVueloSeleccionado);
             });
         }
     }
