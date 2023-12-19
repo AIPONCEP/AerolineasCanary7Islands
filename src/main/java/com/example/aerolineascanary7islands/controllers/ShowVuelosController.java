@@ -16,12 +16,15 @@ public class ShowVuelosController implements Initializable {
     public Label panelControlDeVuelos;
     public TableView tablaVuelos;
     private List<Vuelo> vuelos;
+    public static Vuelo vueloParaActualizar;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tablaVuelos.getItems().clear();
         vuelos=VuelosModel.obtenerTodosLosVuelos();
         tablaVuelos.getItems().addAll(vuelos);
         rellenarColumnas();
+
     }
     public void crearVuelos(MouseEvent mouseEvent) {
         MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/makeTravel-view.fxml","Crear vuelos",panelControlDeVuelos);
@@ -43,7 +46,8 @@ public class ShowVuelosController implements Initializable {
             }
         } else {
             MethodsForControllers.showAlert("Error","Por favor, selecciona un vuelo antes de intentar eliminarlo.", Alert.AlertType.ERROR);
-        }    }
+        }
+    }
     /**
      * rellenarColumnas
      * Este método se utiliza para asignar los valores encontrados en la base de datos a las tablas en inicialize y mostrar datos.
@@ -82,5 +86,11 @@ public class ShowVuelosController implements Initializable {
         colPlazasPrimera.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getPlazas_Primera()).asObject());
     }
     public void actualizarVuelo(MouseEvent mouseEvent) {
+        vueloParaActualizar = (Vuelo) tablaVuelos.getSelectionModel().getSelectedItem();
+        MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/updateVuelo-view.fxml","UpdateVuelos",panelControlDeVuelos);
+    }
+
+    public void salir(MouseEvent mouseEvent) {
+        MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/main-view.fxml","Main",panelControlDeVuelos);
     }
 }

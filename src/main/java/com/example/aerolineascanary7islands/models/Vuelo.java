@@ -28,7 +28,6 @@ public class Vuelo implements Serializable {
     private int plazas_Turista;
     @Column(name = "Plazas_Primera")
     private int plazas_Primera;
-
     @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL)
     private List<BilleteComprado> billetesCompradosList;
 
@@ -42,7 +41,6 @@ public class Vuelo implements Serializable {
         this.plazas_Turista = 0;
         this.plazas_Primera = 0;
         this.billetesCompradosList = new ArrayList<>();
-
     }
     public Vuelo(String cod_Vuelo, float precio, String fecha_Salida,
                  String fecha_Llegada, String destino, String procedencia,

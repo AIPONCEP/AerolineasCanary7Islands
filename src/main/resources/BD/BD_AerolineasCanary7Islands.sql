@@ -54,12 +54,6 @@ INSERT INTO Usuarios (Nombre, Contraseña, Mail, Tlf) VALUES ("Ana","123","Canar
 INSERT INTO Administradores (Id_Admin,Sueldo) values (1,2000);
 INSERT INTO Usuarios (Nombre, Contraseña, Mail, Tlf) VALUES ("Jose","123","Canary7IslandJose@gmail.com",928418775);
 
-INSERT INTO Pasajeros (Id_Pasajero, Tipo_plaza) VALUES (2,"Turista");
-INSERT INTO BilletesComprados (Fecha, CodVuelo, IdPasajero) VALUES
-("2023-12-19 08:30:00", "GC01", 2),
-("2023-12-20 08:45:00", "GC02", 2);
-
-
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
 VALUES ("GC01", 100, "2023-12-20 10:00:00", "2023-12-20 12:00:00", "Gran Canaria", "Tenerife", 100, 20);
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
@@ -94,3 +88,8 @@ Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Pro
 VALUES ("EH01", 130, "2023-12-24 16:00:00", "2023-12-24 18:00:00", "El Hierro","Lanzarote", 100, 20);
 Insert INTO vuelos (Cod_Vuelo, Precio, Fecha_Salida, Fecha_Llegada, Destino, Procedencia, Plazas_Turista, Plazas_Primera)
 VALUES ("EH02", 180, "2023-12-27 15:00:00", "2023-12-27 17:00:00", "El Hierro","Fuerteventura", 100, 20);
+
+INSERT INTO Pasajeros (Id_Pasajero, Tipo_plaza) VALUES (2,"Turista");
+INSERT INTO BilletesComprados (Fecha, CodVuelo, IdPasajero) VALUES
+("2023-12-19 08:30:00", "GC01", 2),
+("2023-12-20 08:45:00", "GC02", 2);

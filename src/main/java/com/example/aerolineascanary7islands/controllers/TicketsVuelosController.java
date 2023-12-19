@@ -95,7 +95,7 @@ public class TicketsVuelosController {
             LocalDateTime fechaHora = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String fechaFormateada = fechaHora.format(formatter);
-            BilleteComprado billete = new BilleteComprado(fechaFormateada,vueloSeleccionado.getCod_Vuelo(), pasajero.getId_Pasajero() , null, null);
+            BilleteComprado billete = new BilleteComprado(fechaFormateada,vueloSeleccionado.getCod_Vuelo(), pasajero.getId_Pasajero(),null,null);
             insert(pasajero);
             insert(billete);
         } else {

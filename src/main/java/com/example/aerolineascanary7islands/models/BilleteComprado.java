@@ -8,16 +8,13 @@ import java.io.Serializable;
 public class BilleteComprado implements Serializable {
     @Id
     @Column(name = "Fecha")
-    private String Fecha;
-
+    private String fecha;
     @Id
     @Column(name = "CodVuelo")
     private String codVuelo;
     @Id
     @Column(name = "IdPasajero")
     private int idPasajero;
-
-
     @Id
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "CodVuelo")
@@ -28,14 +25,14 @@ public class BilleteComprado implements Serializable {
     private Pasajero  pasajero;
 
     public BilleteComprado(String fecha, String codVuelo, int idPasajero, Vuelo vuelo, Pasajero pasajero) {
-        Fecha = fecha;
+        this.fecha = fecha;
         this.codVuelo = codVuelo;
         this.idPasajero = idPasajero;
-        this.vuelo = vuelo;
-        this.pasajero = pasajero;
+        this.vuelo = null;
+        this.pasajero = null;
     }
     public BilleteComprado() {
-        Fecha = null;
+        fecha = null;
         this.codVuelo = null;
         this.idPasajero = 0;
         this.vuelo = null;
@@ -43,11 +40,11 @@ public class BilleteComprado implements Serializable {
     }
 
     public String getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(String fecha) {
-        Fecha = fecha;
+        fecha = fecha;
     }
 
     public String getCodVuelo() {
