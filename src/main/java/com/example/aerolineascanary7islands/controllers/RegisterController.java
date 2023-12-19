@@ -2,6 +2,7 @@ package com.example.aerolineascanary7islands.controllers;
 
 import com.example.aerolineascanary7islands.models.Usuario;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
@@ -50,9 +51,13 @@ public class RegisterController {
      * Luego redirige a la vista de inicio de sesión.
      */
     public void send(){
-        Usuario usuario = new Usuario(textFieldNombre.getText(),textFieldContraseña.getText(),textFieldMail.getText(), Integer.parseInt(textFieldTelefono.getText()));
-        insert(usuario);
-        cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml","login", registerTitle);
+        if(textFieldNombre.getText().isEmpty() && textFieldContraseña.getText().isEmpty() && textFieldMail.getText().isEmpty() && textFieldTelefono.getText().isEmpty()){
+            MethodsForControllers.showAlert("Error", "Debes rellenar todos los campos", Alert.AlertType.ERROR);
+        }else {
+            Usuario usuario = new Usuario(textFieldNombre.getText(), textFieldContraseña.getText(), textFieldMail.getText(), Integer.parseInt(textFieldTelefono.getText()));
+            insert(usuario);
+            cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml", "login", registerTitle);
+        }
     }
 }
 

@@ -11,12 +11,8 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-
-import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import static com.example.aerolineascanary7islands.controllers.LoginController.atributoUsuario;
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
@@ -77,11 +73,7 @@ public class TicketsVuelosController {
         RadioButton selectedRadioButton = (RadioButton) tipoAsiento.getSelectedToggle();
         Pasajero pasajero = new Pasajero(selectedRadioButton.getText(), atributoUsuario, null);
         pasajero.setId_Pasajero(atributoUsuario.getId());
-
-        // Obtener el vuelo seleccionado basado en el código del vuelo
-
         for (Vuelo vuelo : vuelosLista) {
-
             System.out.println(codigoVueloSeleccionado);
             if (vuelo.getCod_Vuelo().equals(codigoVueloSeleccionado)) {
                 vuelo.setBilletesCompradosList(null);
@@ -89,9 +81,7 @@ public class TicketsVuelosController {
                 break;
             }
         }
-
         if (vueloSeleccionado != null) {
-            // Crear el objeto BilletesComprados con los datos recolectados
             LocalDateTime fechaHora = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String fechaFormateada = fechaHora.format(formatter);
@@ -101,7 +91,6 @@ public class TicketsVuelosController {
         } else {
             System.out.println("El vuelo seleccionado no fue encontrado en la lista de vuelos.");
         }
-
         paneAsiento.setVisible(false);
     }
     /**

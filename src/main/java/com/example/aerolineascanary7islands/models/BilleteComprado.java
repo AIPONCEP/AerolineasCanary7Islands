@@ -28,8 +28,8 @@ public class BilleteComprado implements Serializable {
         this.fecha = fecha;
         this.codVuelo = codVuelo;
         this.idPasajero = idPasajero;
-        this.vuelo = null;
-        this.pasajero = null;
+        this.vuelo = vuelo;
+        this.pasajero = pasajero;
     }
     public BilleteComprado() {
         fecha = null;

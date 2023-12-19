@@ -20,36 +20,29 @@ public class LoginController {
     private TextField textFieldEmail;
     @FXML
     private TextField textFieldContraseña;
-
     public static Usuario atributoUsuario;
-
-    /**
-     * initialize
-     * Método invocado al inicializar el controlador.
-     * No contiene lógica en este momento.
-     */
-    public void initialize(){
-    }
-
     /**
      * send
      * Método invocado al enviar el formulario de inicio de sesión.
      * Verifica las credenciales del usuario y redirige a la vista correspondiente.
      */
     public void send(){
-        Usuario usuario = findUsuario(textFieldEmail.getText(), textFieldContraseña.getText());
-        if (usuario != null){
-            atributoUsuario = usuario;
-            if(esAdministrador(1,textFieldEmail.getText())){
-                cambiarScene("/com/example/aerolineascanary7islands/showVuelos-view.fxml","Panel de Control de Vuelos",loginTitle);
-            }else {
-                cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml", "login", loginTitle);
+        if(!textFieldEmail.getText().isEmpty() && !textFieldContraseña.getText().isEmpty()){
+            Usuario usuario = findUsuario(textFieldEmail.getText(), textFieldContraseña.getText());
+            if (usuario != null){
+                atributoUsuario = usuario;
+                if(esAdministrador(1,textFieldEmail.getText())){
+                    cambiarScene("/com/example/aerolineascanary7islands/showVuelos-view.fxml","Panel de Control de Vuelos",loginTitle);
+                }else {
+                    cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml", "login", loginTitle);
+                }
+            } else {
+                MethodsForControllers.showAlert("ERROR","No se encontró el usuario", Alert.AlertType.ERROR);
             }
-        } else {
-            MethodsForControllers.showAlert("ERROR","No se encontró el usuario", Alert.AlertType.ERROR);
+        }else {
+            MethodsForControllers.showAlert("Error","Debe rellenar todos los campos", Alert.AlertType.ERROR);
         }
     }
-
     /**
      * registerClick
      * Método invocado al hacer clic en el botón de registro.

@@ -16,6 +16,15 @@ public class UpdateVueloController {
     public TextField textFechaLlegada;
     @FXML
     public Label actualizarTitle;
+    /**
+     * actualizar
+     * comprueba que los datos esten bien,
+     * que el textPrecio tenga un tipo de dato Float,
+     * que las fechas salida y llegada cumplan el formato definido
+     * y que la fecha salida sea anterior a la llegada.
+     * luego de comprobarlo los modifica en la base de datos...
+     * @param mouseEvent
+     */
     public void actualizar(MouseEvent mouseEvent) {
         if (textPrecio.getText() != null) {
             float nuevoPrecio = Float.parseFloat(textPrecio.getText());
@@ -51,6 +60,11 @@ public class UpdateVueloController {
             }
         }
     }
+    /**
+     * volver
+     * Redifige a la vista showVuelos
+     * @param mouseEvent
+     */
     public void volver(MouseEvent mouseEvent) {
         MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/showVuelos-view.fxml","Show Vuelos",actualizarTitle);
     }

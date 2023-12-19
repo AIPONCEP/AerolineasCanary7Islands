@@ -2,7 +2,6 @@ package com.example.aerolineascanary7islands.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,7 +29,6 @@ public class Vuelo implements Serializable {
     private int plazas_Primera;
     @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL)
     private List<BilleteComprado> billetesCompradosList;
-
     public Vuelo() {
         this.cod_Vuelo = "";
         this.precio = 0.0F;
@@ -103,6 +101,22 @@ public class Vuelo implements Serializable {
     public void setPlazas_Primera(int plazas_Primera) {
         this.plazas_Primera = plazas_Primera;
     }
+    public void addBilletesCompradosVuelosList(BilleteComprado billete){
+        this.billetesCompradosList.add(billete);
+    }
+    public List<BilleteComprado> getBilletesCompradosList() {
+        return billetesCompradosList;
+    }
+    public void setBilletesCompradosList(List<BilleteComprado> billetesCompradosList) {
+        this.billetesCompradosList = billetesCompradosList;
+    }
+    /**
+     * validarFechas
+     * Este método comprueba que la fecha de salida sea anterior a la fecha de llegada
+     * @param fecha_Salida
+     * @param fecha_Llegada
+     * @return true si es anterior y false en caso contrario.
+     */
     public static boolean validarFechas(String fecha_Salida, String fecha_Llegada) {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -114,13 +128,36 @@ public class Vuelo implements Serializable {
             return false;
         }
     }
-    public void addBilletesCompradosVuelosList(BilleteComprado billete){
-        this.billetesCompradosList.add(billete);
-    }
-    public List<BilleteComprado> getBilletesCompradosList() {
-        return billetesCompradosList;
-    }
-    public void setBilletesCompradosList(List<BilleteComprado> billetesCompradosList) {
-        this.billetesCompradosList = billetesCompradosList;
+    /**
+     * validarValoresFecha
+     * Recibe una fecha en formato string y la separa por partes con split.
+     * Se crean variables tipo entero para determinar las partes del split que son hora, minuto, segundo, año, mes y dia según corresponda.
+     * Patron = "YYYY-MM-DD HH:MI:SS"
+     * Se hacen las comprobaciones oportunas, devolviendo false si entra en alguno de los ifs, lo que significa que los datos están mal, y true si está ok.
+     * @param fecha
+     * @return true o false según corresponda.
+     */
+    public static boolean validarValoresFecha(String fecha) {
+        String[] partesFechaHora = fecha.split(" ");
+        String[] partesFecha = partesFechaHora[0].split("-");
+        String[] partesHora = partesFechaHora[1].split(":");
+        try {
+            int year = Integer.parseInt(partesFecha[0]);
+            int month = Integer.parseInt(partesFecha[1]);
+            int day = Integer.parseInt(partesFecha[2]);
+            int hour = Integer.parseInt(partesHora[0]);
+            int minute = Integer.parseInt(partesHora[1]);
+            int second = Integer.parseInt(partesHora[2]);
+            if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31 ||
+                    hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
+                return false;
+            }
+            if (year > 2100 || year < 2023) {
+                return false;
+            }
+            return true;
+        } catch (NumberFormatException e) {
+            return false; // Si alguna parte no es un número, es inválido
+        }
     }
 }

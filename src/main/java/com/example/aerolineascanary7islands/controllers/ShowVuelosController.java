@@ -24,8 +24,12 @@ public class ShowVuelosController implements Initializable {
         vuelos=VuelosModel.obtenerTodosLosVuelos();
         tablaVuelos.getItems().addAll(vuelos);
         rellenarColumnas();
-
     }
+    /**
+     * crearVuelos
+     * Redirige a la vista de makeTravel
+     * @param mouseEvent
+     */
     public void crearVuelos(MouseEvent mouseEvent) {
         MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/makeTravel-view.fxml","Crear vuelos",panelControlDeVuelos);
     }
@@ -34,6 +38,11 @@ public class ShowVuelosController implements Initializable {
         tablaVuelos.getItems().clear();
         tablaVuelos.getItems().addAll(vuelos);
     }
+    /**
+     * eliminarVuelos
+     * coge el vuelo que se ha seleccionado en la tabla y lo elimina llamando a VuelosModel.eliminarVuelo
+     * @param mouseEvent
+     */
     public void eliminarVuelos(MouseEvent mouseEvent) {
         Vuelo vueloSeleccionado = (Vuelo) tablaVuelos.getSelectionModel().getSelectedItem();
         if (vueloSeleccionado != null) {
@@ -85,11 +94,25 @@ public class ShowVuelosController implements Initializable {
         TableColumn<Vuelo, Integer> colPlazasPrimera = (TableColumn<Vuelo, Integer>) tablaVuelos.getColumns().get(7);
         colPlazasPrimera.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getPlazas_Primera()).asObject());
     }
+    /**
+     * actualizarVuelo
+     * guarda el vuelo seleccionado en vueloParaActualizar
+     * Redirige a UpdateVuelos
+     * @param mouseEvent
+     */
     public void actualizarVuelo(MouseEvent mouseEvent) {
-        vueloParaActualizar = (Vuelo) tablaVuelos.getSelectionModel().getSelectedItem();
-        MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/updateVuelo-view.fxml","UpdateVuelos",panelControlDeVuelos);
+        if(!tablaVuelos.getSelectionModel().isEmpty()){
+            vueloParaActualizar = (Vuelo) tablaVuelos.getSelectionModel().getSelectedItem();
+            MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/updateVuelo-view.fxml","UpdateVuelos",panelControlDeVuelos);
+        }else{
+            MethodsForControllers.showAlert("Error","Seleccione en la tabla el vuelo a actualizar", Alert.AlertType.ERROR);
+        }
     }
-
+    /**
+     * salir
+     * Redirige a main
+     * @param mouseEvent
+     */
     public void salir(MouseEvent mouseEvent) {
         MethodsForControllers.cambiarScene("/com/example/aerolineascanary7islands/main-view.fxml","Main",panelControlDeVuelos);
     }
