@@ -51,7 +51,6 @@ public class VuelosModel {
         manager.getTransaction().commit();
         manager.close();
     }
-
     public static void updateVuelo(Vuelo v){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();

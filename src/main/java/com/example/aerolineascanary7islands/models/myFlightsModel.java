@@ -6,11 +6,7 @@ import java.util.List;
 
 import static com.example.aerolineascanary7islands.models.RegisterLoginModel.managerFactory;
 
-
-
-
 public class myFlightsModel {
-
     public static List<Vuelo> findVueloTickets(int idUsuario) {
         EntityManager manager = null;
         try {
@@ -38,18 +34,24 @@ public class myFlightsModel {
         }
         return null;
     }
-
     public static void eliminarBillete(BilleteComprado b) {
-        EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
+   /*     EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
         manager.getTransaction().begin();
         // Obtener el BilleteComprado por su código de vuelo
-        BilleteComprado billete = manager.find(BilleteComprado.class, b.getCodVuelo());
+        BilleteComprado billete = manager.find(BilleteComprado.class,b);
         manager.remove(billete);
         manager.getTransaction().commit();
-
         manager.close();
+
+    */
+        EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
+        manager.getTransaction().begin();
+        // Usar merge para asociar la instancia con la sesión de Hibernate
+        BilleteComprado billete = manager.merge(b);
+        manager.remove(billete);
+        manager.getTransaction().commit();
+        manager.close();
+
     }
 
-
-
-    }
+}
