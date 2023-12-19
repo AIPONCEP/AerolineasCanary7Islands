@@ -22,7 +22,9 @@ import static com.example.aerolineascanary7islands.controllers.LoginController.a
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.controllers.TicketsController.vuelosLista;
 import static com.example.aerolineascanary7islands.models.ManipulateBd.insert;
-
+/**
+ * Controlador para la vista de selección de vuelos y reserva de billetes.
+ */
 public class TicketsVuelosController {
     @FXML
     private VBox dynamicContainer;
@@ -36,7 +38,9 @@ public class TicketsVuelosController {
     private String codigoVueloSeleccionado;
 
     private Vuelo vueloSeleccionado;
-
+    /**
+     * Inicializa la vista de selección de vuelos.
+     */
     public void initialize() {
         paneAsiento.setVisible(false);
         int count = 1;
@@ -60,11 +64,15 @@ public class TicketsVuelosController {
             });
         }
     }
-
+    /**
+     * Cancela la selección de asiento y oculta el panel.
+     */
     public void cancelar(){
         paneAsiento.setVisible(false);
     }
-
+    /**
+     * Confirma la reserva del billete seleccionado.
+     */
     public void confirmar(){
         RadioButton selectedRadioButton = (RadioButton) tipoAsiento.getSelectedToggle();
         Pasajero pasajero = new Pasajero(selectedRadioButton.getText(), atributoUsuario, null);
@@ -96,7 +104,9 @@ public class TicketsVuelosController {
 
         paneAsiento.setVisible(false);
     }
-
+    /**
+     * Sale de la vista actual y muestra la vista de tickets.
+     */
     public void salir(){
         cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml", "Tickets", labelTitle);
 

@@ -17,8 +17,11 @@ import java.util.List;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.models.TicketsModel.findVuelo;
-
+/**
+ * Controlador para la vista de selección y reserva de vuelos.
+ */
 public class TicketsController {
+    // Elementos de la interfaz gráfica
     @FXML
     private StackPane carrousel;
     @FXML
@@ -41,15 +44,18 @@ public class TicketsController {
     private Spinner spinnerVuelta;
     private int indice = 0;
     public static List<Vuelo> vuelosLista;
-
+    /**
+     * Inicializa la vista de selección y reserva de vuelos.
+     */
     public void initialize() {
+        // Configuraciones iniciales
         paneBg.setVisible(false);
         paneSelection.setVisible(false);
         // Llenar los ComboBox con nombres de islas
         List<String> islasCanarias = Arrays.asList("Tenerife", "Gran Canaria", "Lanzarote", "Fuerteventura", "La Palma");
         comboBoxOrigen.getItems().addAll(islasCanarias);
         comboBoxDestino.getItems().addAll(islasCanarias);
-        // Configurar Spinner de ida con la fecha actual
+        // Configuración de los Spinners para fechas de ida y vuelta
         SpinnerValueFactory<LocalDate> idaValueFactory = new SpinnerValueFactory<>() {
             @Override
             public void decrement(int steps) {
@@ -60,6 +66,7 @@ public class TicketsController {
                 setValue(getValue().plusDays(steps));
             }
         };
+        // Convertidores para mostrar fechas en los Spinners
         spinnerIda.setValueFactory(idaValueFactory);
         idaValueFactory.setValue(LocalDate.now());
         // Configurar Spinner de vuelta con un día después de la fecha actual
@@ -103,16 +110,28 @@ public class TicketsController {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
+    /**
+     * Redirige a la vista del perfil.
+     */
     public void perfilClick(){
         cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml","Informacion personal", labelTitle);
     }
+    /**
+     * Cierra la ventana actual y muestra la vista principal.
+     */
     public void salir(){
         cambiarScene("/com/example/aerolineascanary7islands/main-view.fxml", "Main", labelTitle);
     }
+    /**
+     * Muestra el panel para reservar vuelos.
+     */
     public void reservar(){
         paneBg.setVisible(true);
         paneSelection.setVisible(true);
     }
+    /**
+     * Cambia la imagen visible entre dos paneles.
+     */
     private void cambiarImagen() {
         if (indice == 0) {
             pane1.setVisible(false);
@@ -124,10 +143,16 @@ public class TicketsController {
             indice = 0;
         }
     }
+    /**
+     * Oculta el panel de reserva de vuelos.
+     */
     public void salirPane(){
         paneBg.setVisible(false);
         paneSelection.setVisible(false);
     }
+    /**
+     * Busca vuelos disponibles según los criterios seleccionados.
+     */
     public void buscarVuelo(){
         /*
                 if(Vuelo.validarFechas(spinnerIda.getValue().toString(),spinnerVuelta.getValue().toString())){

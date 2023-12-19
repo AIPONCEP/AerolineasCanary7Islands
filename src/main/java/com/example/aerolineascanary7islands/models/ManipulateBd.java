@@ -1,17 +1,29 @@
 package com.example.aerolineascanary7islands.models;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ManipulateBd
+ * Contiene métodos para interactuar con la base de datos.
+ */
 public class ManipulateBd {
+
+    /**
+     * managerFactory
+     * Factoría para crear el EntityManager.
+     */
     public static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("Persistencia");
+
+    /**
+     * insert
+     * Inserta un objeto en la base de datos.
+     *
+     * @param object Objeto a insertar en la base de datos.
+     */
     public static void insert(Object object){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
@@ -19,6 +31,13 @@ public class ManipulateBd {
         manager.getTransaction().commit();
         manager.close();
     }
+
+    /**
+     * updateBd
+     * Actualiza un objeto en la base de datos.
+     *
+     * @param object Objeto a actualizar en la base de datos.
+     */
     public static void updateBd(Object object){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
@@ -26,5 +45,4 @@ public class ManipulateBd {
         manager.getTransaction().commit();
         manager.close();
     }
-
 }

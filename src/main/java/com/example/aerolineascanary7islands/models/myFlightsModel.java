@@ -39,31 +39,17 @@ public class myFlightsModel {
         return null;
     }
 
-    public static List<Pasajero> obtenerPasajero(Integer idUsuario) {
-        EntityManager manager = null;
-        try {
-            manager = managerFactory.createEntityManager();
+    public static void eliminarBillete(BilleteComprado b) {
+        EntityManager manager = ManipulateBd.managerFactory.createEntityManager();
+        manager.getTransaction().begin();
+        // Obtener el BilleteComprado por su código de vuelo
+        BilleteComprado billete = manager.find(BilleteComprado.class, b.getCodVuelo());
+        manager.remove(billete);
+        manager.getTransaction().commit();
 
-            TypedQuery<Pasajero> query = manager.createQuery(
-                    "SELECT p FROM Pasajero p " +
-                            "JOIN BilleteComprado bc ON p.Id_Pasajero = bc.pasajero.Id_Pasajero " +
-                            "JOIN Usuario u ON p.Id_Pasajero = u.id " +
-                            "WHERE u.id = :idUsuario", Pasajero.class);
-            query.setParameter("idUsuario", idUsuario);
-
-            List<Pasajero> resultList = query.getResultList();
-            if (!resultList.isEmpty()) {
-                return resultList;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (manager != null && manager.isOpen()) {
-                manager.close();
-            }
-        }
-        return null;
+        manager.close();
     }
+
 
 
     }
