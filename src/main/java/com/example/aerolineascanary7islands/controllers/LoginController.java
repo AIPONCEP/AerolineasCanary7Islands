@@ -9,6 +9,10 @@ import javafx.scene.control.TextField;
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.models.RegisterLoginModel.*;
 
+/**
+ * LoginController
+ * Controlador para la vista de inicio de sesión.
+ */
 public class LoginController {
     @FXML
     private Label loginTitle;
@@ -18,8 +22,20 @@ public class LoginController {
     private TextField textFieldContraseña;
 
     public static Usuario atributoUsuario;
+
+    /**
+     * initialize
+     * Método invocado al inicializar el controlador.
+     * No contiene lógica en este momento.
+     */
     public void initialize(){
     }
+
+    /**
+     * send
+     * Método invocado al enviar el formulario de inicio de sesión.
+     * Verifica las credenciales del usuario y redirige a la vista correspondiente.
+     */
     public void send(){
         Usuario usuario = findUsuario(textFieldEmail.getText(), textFieldContraseña.getText());
         if (usuario != null){
@@ -29,10 +45,16 @@ public class LoginController {
             }else {
                 cambiarScene("/com/example/aerolineascanary7islands/tickets-view.fxml", "login", loginTitle);
             }
-        }else {
-            MethodsForControllers.showAlert("ERROR","No se encontro el usuario", Alert.AlertType.ERROR);
+        } else {
+            MethodsForControllers.showAlert("ERROR","No se encontró el usuario", Alert.AlertType.ERROR);
         }
     }
+
+    /**
+     * registerClick
+     * Método invocado al hacer clic en el botón de registro.
+     * Redirige a la vista de registro.
+     */
     public void registerClick(){
         cambiarScene("/com/example/aerolineascanary7islands/register-view.fxml","register", loginTitle);
     }

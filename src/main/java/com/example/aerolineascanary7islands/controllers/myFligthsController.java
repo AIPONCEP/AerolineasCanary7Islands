@@ -13,7 +13,10 @@ import java.util.List;
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.controllers.PerfilController.vuelosListaPerfil;
 
-
+/**
+ * myFligthsController
+ * Controlador para la vista de vuelos del perfil del usuario.
+ */
 public class myFligthsController {
     @FXML
     private VBox dynamicContainer;
@@ -24,7 +27,10 @@ public class myFligthsController {
     private Label labelTitle;
 
     private String codigoVueloSeleccionado;
-
+    /**
+     * initialize
+     * Inicializa la vista de vuelos del perfil del usuario.
+     */
     public void initialize() {
         int count = 1;
         // Lógica para agregar paneles con texto y botones en la misma fila
@@ -51,6 +57,10 @@ public class myFligthsController {
             });
         }
     }
+    /**
+     * salir
+     * Sale de la vista actual y muestra la vista del perfil del usuario.
+     */
     public void salir(){
         cambiarScene("/com/example/aerolineascanary7islands/perfil-view.fxml", "Perfil", labelTitle);
     }

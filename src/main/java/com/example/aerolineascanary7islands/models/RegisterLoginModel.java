@@ -5,9 +5,21 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
-
+/**
+ * RegisterLoginModel
+ * Contiene métodos relacionados con el registro y el inicio de sesión de usuarios.
+ */
 public class RegisterLoginModel {
     public static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("Persistencia");
+    /**
+     * findUsuario
+     * Busca un usuario en la base de datos por su correo electrónico y contraseña.
+     *
+     * @param email       El correo electrónico del usuario.
+     * @param contraseña  La contraseña del usuario.
+     * @return            El objeto Usuario encontrado, o null si no se encontró ninguno.
+     */
+
     public static Usuario findUsuario(String email, String contraseña) {
         try {
                 EntityManager manager = managerFactory.createEntityManager();
