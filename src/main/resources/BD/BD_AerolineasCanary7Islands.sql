@@ -29,7 +29,7 @@ CREATE TABLE Usuarios(
 
 -- Creación de la tabla Pasajeros
 CREATE TABLE Pasajeros (
-   Id_Pasajero INT AUTO_INCREMENT PRIMARY KEY  NOT NULL,
+   Id_Pasajero INT PRIMARY KEY  NOT NULL,
    Tipo_plaza VARCHAR(50) NOT NULL,
    FOREIGN KEY (Id_Pasajero) REFERENCES Usuarios(Id)
 );

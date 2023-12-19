@@ -83,14 +83,14 @@
                   <HBox alignment="CENTER" layoutX="50.0" layoutY="65.0" prefHeight="30.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <RadioButton mnemonicParsing="false" selected="true" text="Turista" textFill="#220000">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="tipoVuelo" />
-                           </toggleGroup>
                            <font>
                               <Font name="Calibri" size="16.0" />
                            </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tipoAsiento" />
+                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Premium" textFill="#220000" toggleGroup="$tipoVuelo">
+                        <RadioButton mnemonicParsing="false" text="Premium" textFill="#220000" toggleGroup="$tipoAsiento">
                            <font>
                               <Font name="Calibri" size="16.0" />
                            </font>

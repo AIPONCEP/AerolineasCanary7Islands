@@ -17,14 +17,12 @@ public class Pasajero {
     @OneToMany(mappedBy = "pasajero", cascade = CascadeType.ALL)
     private List<BilletesComprados> billetesCompradosList;
 
-    public Pasajero(int id_Pasajero, String tipo_plaza, Usuario usuario, List<BilletesComprados> billetesCompradosList) {
-        Id_Pasajero = id_Pasajero;
+    public Pasajero( String tipo_plaza, Usuario usuario, List<BilletesComprados> billetesCompradosList) {
         Tipo_plaza = tipo_plaza;
         this.usuario = usuario;
         this.billetesCompradosList = billetesCompradosList;
     }
     public Pasajero() {
-        Id_Pasajero = 0;
         Tipo_plaza = null;
         this.usuario = null;
         this.billetesCompradosList = new ArrayList<>();
