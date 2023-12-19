@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
 import static com.example.aerolineascanary7islands.models.ManipulateBd.insert;
+import static com.example.aerolineascanary7islands.models.RegisterLoginModel.existeUsuarioPorEmail;
+import static com.example.aerolineascanary7islands.models.RegisterLoginModel.findUsuario;
 //import static com.example.aerolineascanary7islands.models.RegisterModel.getUsuario;
 import com.example.aerolineascanary7islands.models.ManipulateBd;
 import javafx.scene.control.TextField;
@@ -51,9 +53,20 @@ public class RegisterController {
      * Luego redirige a la vista de inicio de sesión.
      */
     public void send(){
-        if(textFieldNombre.getText().isEmpty() && textFieldContraseña.getText().isEmpty() && textFieldMail.getText().isEmpty() && textFieldTelefono.getText().isEmpty()){
+        if(textFieldNombre.getText().isEmpty() || textFieldContraseña.getText().isEmpty() || textFieldMail.getText().isEmpty() || textFieldTelefono.getText().isEmpty()){
             MethodsForControllers.showAlert("Error", "Debes rellenar todos los campos", Alert.AlertType.ERROR);
-        }else {
+        } else if (!textFieldMail.getText().matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com")) {
+            MethodsForControllers.showAlert("Error", "Correo electrónico inválido. Ejemplo: nombredetuemail@gmail.com", Alert.AlertType.ERROR);
+        } else if (!textFieldTelefono.getText().matches("\\d+")) {
+            MethodsForControllers.showAlert("Error", "El teléfono debe contener solo números", Alert.AlertType.ERROR);
+        } else if (!textFieldTelefono.getText().matches("\\d{9}")) {
+            MethodsForControllers.showAlert("Error", "El teléfono debe contener exactamente 9 dígitos", Alert.AlertType.ERROR);
+        } else if (textFieldNombre.getText().matches(".*\\d.*")) {
+            MethodsForControllers.showAlert("Error", "El nombre no debe contener números", Alert.AlertType.ERROR);
+        }else if(existeUsuarioPorEmail(textFieldMail.getText())){
+                MethodsForControllers.showAlert("Error", "Ya existe un usuario con ese Mail", Alert.AlertType.ERROR);
+            } else {
+            // Resto del código para crear el Usuario y realizar la inserción en la base de datos
             Usuario usuario = new Usuario(textFieldNombre.getText(), textFieldContraseña.getText(), textFieldMail.getText(), Integer.parseInt(textFieldTelefono.getText()));
             insert(usuario);
             cambiarScene("/com/example/aerolineascanary7islands/login-view.fxml", "login", registerTitle);

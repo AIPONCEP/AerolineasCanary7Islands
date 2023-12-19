@@ -1,5 +1,7 @@
 package com.example.aerolineascanary7islands.models;
 
+import org.hibernate.query.Query;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -59,6 +61,23 @@ public class RegisterLoginModel {
                 return !adminResultList.isEmpty() && adminResultList.get(0) != null;
             }
             manager.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean existeUsuarioPorEmail(String email) {
+        try {
+            EntityManager manager = managerFactory.createEntityManager();
+            TypedQuery<Usuario> idQuery = manager.createQuery("FROM Usuario WHERE mail = :email", Usuario.class);
+            idQuery.setParameter("email", email);
+
+            List<Usuario> listUsuario = idQuery.getResultList();
+            if (!listUsuario.isEmpty()) {
+                return true;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
