@@ -137,7 +137,6 @@ public class TicketsController {
          */
             vuelosLista = findVuelo(comboBoxOrigen.getValue().toString(), comboBoxDestino.getValue().toString(), spinnerIda.getValue().toString(), spinnerVuelta.getValue().toString());
             if (vuelosLista != null){
-                System.out.println(vuelosLista.get(0).getDestino());
                 cambiarScene("/com/example/aerolineascanary7islands/flightsTickets-view.fxml", "Vuelos disponible", labelTitle);
             }else {
                 MethodsForControllers.showAlert("ERROR", "No se encontro ningun vuelo", Alert.AlertType.ERROR);

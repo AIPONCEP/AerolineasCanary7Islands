@@ -15,12 +15,6 @@ public class ManipulateBd {
     public static void insert(Object object){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
-
-        if (!manager.contains(object)) {
-            // Si el objeto está detached, asociarlo al contexto de persistencia
-            object = manager.merge(object);
-        }
-
         manager.persist(object);
         manager.getTransaction().commit();
         manager.close();

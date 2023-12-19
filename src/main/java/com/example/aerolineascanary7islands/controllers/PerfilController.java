@@ -1,5 +1,6 @@
 package com.example.aerolineascanary7islands.controllers;
 
+import com.example.aerolineascanary7islands.models.Vuelo;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
@@ -7,9 +8,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
+import java.util.List;
+
 import static com.example.aerolineascanary7islands.controllers.LoginController.atributoUsuario;
 import static com.example.aerolineascanary7islands.controllers.MethodsForControllers.cambiarScene;
+import static com.example.aerolineascanary7islands.controllers.TicketsController.vuelosLista;
 import static com.example.aerolineascanary7islands.models.PerfilModel.updateUser;
+import static com.example.aerolineascanary7islands.models.myFlightsModel.findVueloTickets;
 
 public class PerfilController {
     @FXML
@@ -31,6 +36,8 @@ public class PerfilController {
     @FXML
     private Label labelTelefono;
     private String selectedValue = "";
+
+    public static List<Vuelo> vuelosListaPerfil;
 
     public void initialize(){
         /*
@@ -85,6 +92,11 @@ public class PerfilController {
     }
 
     public void verVuelos(){
-        cambiarScene("/com/example/aerolineascanary7islands/myFlights-view.fxml", "Mis vuelos", labelTitle);
+        if (findVueloTickets(atributoUsuario.getId()) != null) {
+            vuelosListaPerfil = findVueloTickets(atributoUsuario.getId());
+            cambiarScene("/com/example/aerolineascanary7islands/myFlights-view.fxml", "Mis vuelos", labelTitle);
+        }else {
+            MethodsForControllers.showAlert("ERROR","No tiene ningun billete comprado", Alert.AlertType.ERROR);
+        }
     }
 }

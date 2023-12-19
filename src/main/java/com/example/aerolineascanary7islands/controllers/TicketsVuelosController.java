@@ -1,6 +1,6 @@
 package com.example.aerolineascanary7islands.controllers;
 
-import com.example.aerolineascanary7islands.models.BilletesComprados;
+import com.example.aerolineascanary7islands.models.BilleteComprado;
 import com.example.aerolineascanary7islands.models.Pasajero;
 import com.example.aerolineascanary7islands.models.Vuelo;
 import javafx.fxml.FXML;
@@ -39,7 +39,7 @@ public class TicketsVuelosController {
 
     public void initialize() {
         paneAsiento.setVisible(false);
-        int count = 0;
+        int count = 1;
         // Lógica para agregar paneles con texto y botones en la misma fila
         for (int i = 0; i < vuelosLista.toArray().length; i++) {
             Label label = new Label("Vuelo Nº"+ count++ + " Origen: " + vuelosLista.get(i).getProcedencia()
@@ -67,7 +67,7 @@ public class TicketsVuelosController {
 
     public void confirmar(){
         RadioButton selectedRadioButton = (RadioButton) tipoAsiento.getSelectedToggle();
-        Pasajero pasajero = new Pasajero(selectedRadioButton.getText(), atributoUsuario, new ArrayList<>());
+        Pasajero pasajero = new Pasajero(selectedRadioButton.getText(), atributoUsuario, null);
         pasajero.setId_Pasajero(atributoUsuario.getId());
 
         // Obtener el vuelo seleccionado basado en el código del vuelo
@@ -87,7 +87,7 @@ public class TicketsVuelosController {
             LocalDateTime fechaHora = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String fechaFormateada = fechaHora.format(formatter);
-            BilletesComprados billete = new BilletesComprados(fechaFormateada, vueloSeleccionado, pasajero);
+            BilleteComprado billete = new BilleteComprado(fechaFormateada,vueloSeleccionado.getCod_Vuelo(), pasajero.getId_Pasajero() , null, null);
             insert(pasajero);
             insert(billete);
         } else {

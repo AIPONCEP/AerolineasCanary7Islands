@@ -30,7 +30,7 @@ public class Vuelo implements Serializable {
     private int plazas_Primera;
 
     @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL)
-    private List<BilletesComprados> billetesCompradosList;
+    private List<BilleteComprado> billetesCompradosList;
 
     public Vuelo() {
         this.cod_Vuelo = "";
@@ -46,7 +46,7 @@ public class Vuelo implements Serializable {
     }
     public Vuelo(String cod_Vuelo, float precio, String fecha_Salida,
                  String fecha_Llegada, String destino, String procedencia,
-                 int plazas_Turista, int plazas_Primera, List<BilletesComprados> billetesCompradosList) {
+                 int plazas_Turista, int plazas_Primera, List<BilleteComprado> billetesCompradosList) {
         this.cod_Vuelo = cod_Vuelo;
         this.precio = precio;
         this.fecha_Salida = fecha_Salida;
@@ -116,13 +116,13 @@ public class Vuelo implements Serializable {
             return false;
         }
     }
-    public void addBilletesCompradosVuelosList(BilletesComprados billete){
+    public void addBilletesCompradosVuelosList(BilleteComprado billete){
         this.billetesCompradosList.add(billete);
     }
-    public List<BilletesComprados> getBilletesCompradosList() {
+    public List<BilleteComprado> getBilletesCompradosList() {
         return billetesCompradosList;
     }
-    public void setBilletesCompradosList(List<BilletesComprados> billetesCompradosList) {
+    public void setBilletesCompradosList(List<BilleteComprado> billetesCompradosList) {
         this.billetesCompradosList = billetesCompradosList;
     }
 }
